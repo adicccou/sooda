@@ -6,7 +6,7 @@
 <title>Sooda — Manage Inventory and Sales with ease</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;8..144,500;8..144,600;8..144,700;8..144,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #ffffff;
@@ -35,7 +35,7 @@
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
   body {
-    font-family: 'Roboto Flex', system-ui, -apple-system, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
     color: var(--ink);
     background: var(--bg);
     -webkit-font-smoothing: antialiased;
@@ -47,8 +47,7 @@
     content: "";
     position: fixed; inset: 0; pointer-events: none; z-index: -1;
     background:
-      radial-gradient(900px 600px at 90% -10%, rgba(47,107,255,0.07), transparent 60%),
-      radial-gradient(700px 500px at -10% 20%, rgba(255,122,168,0.05), transparent 60%);
+      radial-gradient(900px 600px at 90% -10%, rgba(47,107,255,0.07), transparent 60%);
   }
   a { color: inherit; text-decoration: none; }
   img { max-width: 100%; display: block; }
@@ -117,6 +116,24 @@
   }
   .btn-store small { font-size: 11px; font-weight: 500; opacity: 0.7; display: block; line-height: 1; margin-bottom: 2px; }
   .btn-store strong { font-size: 16px; font-weight: 700; line-height: 1; display: block; letter-spacing: -0.01em; }
+  .ix {
+    width: 20px;
+    height: 20px;
+    display: block;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+  }
+  .ix-solid {
+    width: 20px;
+    height: 20px;
+    display: block;
+    fill: currentColor;
+    stroke: none;
+  }
   .btn-store .store-ic {
     width: 32px; height: 32px; border-radius: 10px; flex-shrink: 0;
     display: inline-flex; align-items: center; justify-content: center;
@@ -124,7 +141,7 @@
     color: var(--brand-2);
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
   }
-  .btn-store svg { width: 18px; height: 18px; display: block; }
+  .btn-store .ix { width: 18px; height: 18px; }
   .btn-store:hover { background: #f4f7ff; transform: translateY(-1px); box-shadow: 0 14px 28px -16px rgba(13,18,32,0.32), inset 0 0 0 1px rgba(13,18,32,0.05); }
   .nav.nav-scrolled {
     background: rgba(255,255,255,0.96);
@@ -224,18 +241,16 @@
     align-items: center;
     gap: 8px;
   }
-  .hero-form button svg {
+  .hero-form button .ix {
     width: 15px;
     height: 15px;
-    display: block;
-    fill: currentColor;
   }
 
   /* Hero device */
   .phone-stack {
     position: relative;
     max-width: 400px;
-    margin: 52px auto -128px;
+    margin: 104px auto -150px;
     overflow: visible;
   }
   .hero-device {
@@ -249,13 +264,13 @@
     display: block;
     width: 100%;
     height: auto;
-    filter: drop-shadow(0 42px 70px rgba(7, 13, 38, 0.26));
+    filter: drop-shadow(0 28px 44px rgba(7, 13, 38, 0.2));
   }
   .phone-stack:hover .hero-device {
     transform: translateY(-10px);
   }
   .phone-stack:hover .hero-device img {
-    filter: drop-shadow(0 52px 84px rgba(7, 13, 38, 0.3));
+    filter: drop-shadow(0 34px 52px rgba(7, 13, 38, 0.24));
   }
 
   /* Phone screen 1 — sales dashboard */
@@ -321,12 +336,7 @@
     height: 18px;
     color: #a2a9ba;
   }
-  .hero-bell svg {
-    width: 18px;
-    height: 18px;
-    display: block;
-    fill: currentColor;
-  }
+  .hero-bell .ix { width: 18px; height: 18px; }
   .hero-bell::after {
     content: "2";
     position: absolute;
@@ -380,12 +390,7 @@
     justify-content: center;
     color: #1d49ff;
   }
-  .hero-menu-item .ic svg {
-    width: 18px;
-    height: 18px;
-    display: block;
-    fill: currentColor;
-  }
+  .hero-menu-item .ic .ix { width: 18px; height: 18px; }
   .hero-menu-item b {
     font-size: 14px;
     font-weight: 700;
@@ -434,38 +439,75 @@
   /* Beneficiaries */
   .benef-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
   .benef-card {
-    border: 1px solid var(--line); border-radius: var(--radius-md);
-    padding: 22px; background: #fff;
+    border: 1px solid rgba(11,15,28,0.08);
+    border-radius: 24px;
+    padding: 0;
+    background: #fff;
     transition: transform .25s, box-shadow .25s, border-color .25s;
     position: relative;
+    overflow: hidden;
+    min-height: 420px;
+    display: flex;
+    align-items: stretch;
   }
-  .benef-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--line-2); }
+  .benef-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: rgba(11,15,28,0.12); }
   .ph {
-    border-radius: 14px; aspect-ratio: 4/3; margin-bottom: 18px;
-    display: flex; align-items: center; justify-content: center;
-    position: relative; overflow: hidden;
-    border: 1px solid var(--line);
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    border-radius: inherit;
+    display: block;
+    overflow: hidden;
+    border: none;
   }
-  .ph.b1 { background: linear-gradient(135deg, #eaf0ff 0%, #f6f7fa 100%); color: #2f6bff; }
-  .ph.b2 { background: linear-gradient(135deg, #fff1e6 0%, #fdf6ee 100%); color: #ff8a3d; }
-  .ph.b3 { background: linear-gradient(135deg, #ecfbf3 0%, #f4faf6 100%); color: #1f9c7a; }
-  .ph.b4 { background: linear-gradient(135deg, #fde9f1 0%, #fbf3f7 100%); color: #d9477a; }
   .benef-photo {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
   }
-  .ph::after {
-    content: ""; position: absolute; inset: 0;
-    background: radial-gradient(60% 60% at 20% 0%, rgba(255,255,255,0.6), transparent 50%);
+  .ph::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(5,10,24,0.04) 0%, rgba(5,10,24,0.08) 32%, rgba(5,10,24,0.52) 100%);
+    z-index: 1;
     pointer-events: none;
   }
-  .benef-card h3 { font-size: 19px; margin-bottom: 6px; letter-spacing: -0.02em; }
-  .benef-card p { color: var(--ink-mute); font-size: 14px; line-height: 1.55; }
+  .ph::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 38%;
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(10,18,40,0.2) 28%, rgba(10,18,40,0.5) 100%);
+    z-index: 1;
+    pointer-events: none;
+  }
+  .benef-copy {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    margin: 0;
+    padding: 32px 18px 18px;
+    border-radius: 0 0 24px 24px;
+    background: linear-gradient(180deg, rgba(10,15,28,0) 0%, rgba(10,15,28,0.88) 100%);
+  }
+  .benef-card h3 {
+    font-size: 18px;
+    margin-bottom: 6px;
+    letter-spacing: -0.02em;
+    color: #fff;
+  }
+  .benef-card p {
+    color: rgba(255,255,255,0.82);
+    font-size: 14px;
+    line-height: 1.5;
+  }
 
   /* Features */
-  .features { background: transparent; border-radius: 32px; padding: 64px 0; margin: 0; }
+  .features { background: transparent; border-radius: 32px; padding: 34px 0 64px; margin: 0; }
   .features-grid {
     display: grid; grid-template-columns: repeat(8, minmax(0, 1fr));
     grid-template-rows: auto auto auto;
@@ -601,10 +643,10 @@
     justify-content: center;
     gap: 7px;
   }
-  .sales-action svg {
+  .sales-action .ix {
     width: 16px;
     height: 16px;
-    fill: #a6adbe;
+    color: #a6adbe;
     flex-shrink: 0;
   }
   .sales-line {
@@ -720,10 +762,10 @@
     font-weight: 600;
     margin-bottom: 12px;
   }
-  .scan-again svg {
+  .scan-again .ix {
     width: 16px;
     height: 16px;
-    fill: #a6adbe;
+    color: #a6adbe;
   }
   .scan-mini {
     display: flex;
@@ -857,7 +899,7 @@
   .banner::before {
     content: ""; position: absolute; right: -120px; top: -120px; width: 420px; height: 420px;
     background: radial-gradient(circle, rgba(110,148,255,0.45), transparent 70%);
-    filter: blur(20px);
+    filter: blur(12px);
   }
   .banner-head .eyebrow {
     display: inline-flex; align-items: center; gap: 8px;
@@ -879,8 +921,7 @@
     content: attr(data-fill-text);
     position: absolute;
     inset: 0;
-    width: var(--fill-progress);
-    overflow: hidden;
+    clip-path: inset(0 0 calc(100% - var(--fill-progress)) 0);
     white-space: inherit;
     color: #ffffff;
     pointer-events: none;
@@ -892,14 +933,16 @@
   .side-feat { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
   .side-feat.reverse > :first-child { order: 2; }
   .side-feat h2 { font-size: clamp(32px, 3.5vw, 44px); margin-bottom: 28px; }
-  .feat-list { display: flex; flex-direction: column; gap: 14px; }
+  .feat-list { display: flex; flex-direction: column; gap: 2px; }
+  .side-feat.reverse .feat-list { gap: 2px; }
   .feat-item {
     display: flex; align-items: center; gap: 14px;
-    padding: 14px 18px; background: var(--bg-soft); border-radius: 14px;
+    padding: 14px 18px; background: #fff; border-radius: 14px;
+    border: 1px solid transparent;
     font-weight: 500; font-size: 15px;
-    transition: background .2s, transform .2s;
+    transition: background .2s, transform .2s, border-color .2s, box-shadow .2s;
   }
-  .feat-item:hover { background: #fff; transform: translateX(2px); box-shadow: var(--shadow-sm); }
+  .feat-item:hover { background: var(--bg-soft); transform: translateX(2px); border-color: transparent; box-shadow: var(--shadow-sm); }
   .feat-icon {
     width: 40px; height: 40px; flex-shrink: 0; border-radius: 12px;
     background: linear-gradient(180deg, #eff4ff 0%, #dfe9ff 100%);
@@ -907,7 +950,8 @@
     display: flex; align-items: center; justify-content: center; color: var(--brand-2);
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.82), 0 8px 18px -14px rgba(47,107,255,0.38);
   }
-  .feat-icon svg { width: 20px; height: 20px; display: block; fill: currentColor; }
+  .feat-icon .ix,
+  .feat-icon .ix-solid { width: 20px; height: 20px; }
   .side-img {
     aspect-ratio: 4/5; border-radius: 24px;
     background: radial-gradient(120% 100% at 50% 0%, rgba(47,107,255,0.16), transparent 60%), linear-gradient(180deg, #f6f8ff 0%, #eef3ff 100%);
@@ -943,7 +987,8 @@
     display: inline-flex; align-items: center; justify-content: center;
     color: #fff;
   }
-  .side-bubble .ico svg { width: 15px; height: 15px; display: block; fill: currentColor; }
+  .side-bubble .ico .ix,
+  .side-bubble .ico .ix-solid { width: 15px; height: 15px; }
   .side-bubble .meta b { display: block; font-size: 12px; }
   .side-bubble .meta span { font-size: 10px; color: var(--ink-mute); font-weight: 500; }
   .side-bubble.tl { top: 8%; left: 4%; }
@@ -966,7 +1011,7 @@
     color: var(--brand-2);
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.85);
   }
-  .chip-ic { width: 17px; height: 17px; display: block; fill: currentColor; color: var(--brand-2); }
+  .chip-ic.ix { width: 17px; height: 17px; color: var(--brand-2); }
   .chips-foot { text-align: center; margin-top: 32px; color: var(--ink-mute); font-size: 16px; font-style: italic; }
 
   /* Testimonials */
@@ -1018,12 +1063,37 @@
     font-weight: 600; font-size: 18px; color: var(--ink);
   }
   .faq-q .plus {
+    position: relative;
     width: 28px; height: 28px; border-radius: 50%;
-    background: var(--bg-soft); display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0; transition: transform .25s, background .2s;
-    font-size: 18px; line-height: 1; color: var(--ink-2);
+    background: var(--bg-soft); display: inline-flex; align-items: center; justify-content: center;
+    flex-shrink: 0; transition: transform .25s, background .2s, color .2s;
+    color: transparent;
+    font-size: 0;
+    line-height: 1;
   }
-  .faq-item.open .plus { transform: rotate(45deg); background: var(--brand); color: #fff; }
+  .faq-q .plus::before,
+  .faq-q .plus::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 12px;
+    height: 2px;
+    border-radius: 999px;
+    background: var(--ink-2);
+    transform: translate(-50%, -50%);
+    transition: transform .22s ease, opacity .18s ease, background .2s ease;
+  }
+  .faq-q .plus::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+  .faq-item.open .plus { background: var(--brand); }
+  .faq-item.open .plus::before,
+  .faq-item.open .plus::after { background: #fff; }
+  .faq-item.open .plus::after {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(90deg) scaleX(0.35);
+  }
   .faq-a {
     max-height: 0; overflow: hidden;
     transition: max-height .3s ease, padding .3s ease;
@@ -1131,7 +1201,7 @@
     color: #fff;
     border-color: rgba(255,255,255,0.22);
   }
-  .social svg { width: 18px; height: 18px; display: block; fill: currentColor; }
+  .social .ix { width: 18px; height: 18px; }
   .copy {
     font-size: 13px;
     color: rgba(255,255,255,0.55);
@@ -1147,10 +1217,7 @@
   .endcap {
     position: relative;
     overflow: hidden;
-    background:
-      radial-gradient(900px 340px at 12% 100%, rgba(106,182,255,0.18), transparent 55%),
-      radial-gradient(860px 340px at 88% 100%, rgba(255,175,203,0.16), transparent 55%),
-      #030406;
+    background: #07163f;
     color: #fff;
     border-top: 1px solid rgba(255,255,255,0.06);
     min-height: 880px;
@@ -1178,26 +1245,6 @@
     color: rgba(255,255,255,0.68);
     font-size: 15px;
     line-height: 1.7;
-  }
-  .endcap-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 24px;
-    padding: 10px 14px 10px 16px;
-    border-radius: 999px;
-    border: 1px solid rgba(255,255,255,0.12);
-    background: rgba(255,255,255,0.04);
-    color: rgba(255,255,255,0.86);
-    font-size: 14px;
-    font-weight: 500;
-  }
-  .endcap-tag .dot {
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: #6ac2ff;
-    box-shadow: 0 0 14px rgba(106,194,255,0.9);
   }
   .endcap-title {
     color: rgba(255,255,255,0.42);
@@ -1263,28 +1310,26 @@
     border-color: rgba(255,255,255,0.28);
     background: rgba(255,255,255,0.08);
   }
-  .endcap-socials svg {
+  .endcap-socials .ix {
     width: 18px;
     height: 18px;
-    fill: currentColor;
-    display: block;
   }
   .endcap-wordmark {
     position: absolute;
     left: 50%;
-    bottom: -8px;
+    bottom: 6px;
     transform: translateX(-50%);
-    font-size: clamp(180px, 28vw, 420px);
-    line-height: 0.78;
-    letter-spacing: -0.09em;
-    font-weight: 800;
-    text-transform: lowercase;
-    color: rgba(255,255,255,0.08);
-    white-space: nowrap;
+    width: min(860px, 64vw);
+    opacity: 0.14;
     pointer-events: none;
     user-select: none;
     mask-image: linear-gradient(to top, rgba(255,255,255,0.85), rgba(255,255,255,0.1) 55%, transparent 100%);
     -webkit-mask-image: linear-gradient(to top, rgba(255,255,255,0.85), rgba(255,255,255,0.1) 55%, transparent 100%);
+  }
+  .endcap-wordmark img {
+    display: block;
+    width: 100%;
+    height: auto;
   }
 
   @media (max-width: 900px) {
@@ -1354,7 +1399,7 @@
       max-width: 100%;
     }
     .phone-stack {
-      margin: 10px auto -72px;
+      margin: 40px auto -86px;
       max-width: 320px;
     }
     .foot-shell { padding: 34px 22px 20px; }
@@ -1387,7 +1432,7 @@
     }
     .endcap-wordmark {
       bottom: 10px;
-      font-size: clamp(120px, 34vw, 220px);
+      width: min(540px, 84vw);
     }
   }
 </style>
@@ -1415,11 +1460,11 @@
       <p class="lead">Join our early adopter waitlist, for priority access</p>
       <div class="hero-stores">
         <a href="#download" class="btn-store light">
-          <span class="store-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 3h8a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3Zm4 14.8a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4ZM9 6.5v7h6v-7H9Z"/></svg></span>
+          <span class="store-ic"><svg class="ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-mobile"></use></svg></span>
           <div><small style="color:#5a6173">Download on</small><strong>App Store</strong></div>
         </a>
         <a href="#download" class="btn-store light">
-          <span class="store-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm4.4 4.3a1 1 0 0 0-1.4.86v5.62a1 1 0 0 0 1.5.86l4.9-2.81a1 1 0 0 0 0-1.72l-5-2.81Z"/></svg></span>
+          <span class="store-ic"><svg class="ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-play"></use></svg></span>
           <div><small style="color:#5a6173">Get it on</small><strong>Google Play</strong></div>
         </a>
       </div>
@@ -1444,31 +1489,39 @@
     <div class="benef-grid">
       <div class="benef-card">
         <div class="ph b1">
-          <img class="benef-photo" src="https://images.unsplash.com/photo-1764428950651-b0ae0ca4b58d?auto=format&fit=crop&w=1200&q=80" alt="Small business owner packaging products in a studio" />
+          <img class="benef-photo" src="/benefit-small-business.jpg" alt="Small business owner packaging clothing orders in a studio" />
         </div>
-        <h3>Any small business</h3>
-        <p>Ideal for small businesses just starting out and looking to minimize operational costs.</p>
+        <div class="benef-copy">
+          <h3>Any small business</h3>
+          <p>Ideal for small businesses just starting out and looking to minimize operational costs.</p>
+        </div>
       </div>
       <div class="benef-card">
         <div class="ph b2">
-          <img class="benef-photo" src="https://images.unsplash.com/photo-1642197215407-02f28bb4b037?auto=format&fit=crop&w=1200&q=80" alt="Workers packaging cardboard boxes in a warehouse" />
+          <img class="benef-photo" src="/benefit-wholesale.jpg" alt="Small business owner talking with a client while reviewing notes" />
         </div>
-        <h3>Wholesale businesses</h3>
-        <p>A smart choice for wholesale startups focused on reducing expenses.</p>
+        <div class="benef-copy">
+          <h3>Wholesale businesses</h3>
+          <p>A smart choice for wholesale startups focused on reducing expenses.</p>
+        </div>
       </div>
       <div class="benef-card">
         <div class="ph b3">
-          <img class="benef-photo" src="https://images.unsplash.com/photo-1736861236279-6dd57d37e8fb?auto=format&fit=crop&w=1200&q=80" alt="Handmade product preparation on a work table" />
+          <img class="benef-photo" src="/benefit-production.jpg" alt="Close-up of hands tying packaging thread for handmade production" />
         </div>
-        <h3>Own production</h3>
-        <p>Manage small-scale and hand production operations.</p>
+        <div class="benef-copy">
+          <h3>Own production</h3>
+          <p>Manage small-scale and hand production operations.</p>
+        </div>
       </div>
       <div class="benef-card">
         <div class="ph b4">
-          <img class="benef-photo" src="https://images.unsplash.com/photo-1718998673024-5c0ce531f67a?auto=format&fit=crop&w=1200&q=80" alt="Person holding a smartphone with an online shopping app" />
+          <img class="benef-photo" src="/benefit-online-sales.png" alt="Person holding a smartphone with an online shopping app" />
         </div>
-        <h3>Online sales</h3>
-        <p>Tailored for online trading businesses looking to streamline processes.</p>
+        <div class="benef-copy">
+          <h3>Online sales</h3>
+          <p>Tailored for online trading businesses looking to streamline processes.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -1489,7 +1542,7 @@
             <div class="sales-float scan">
               <h4>Scan Product</h4>
               <div class="scan-again">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3h4v2H7v2H5V3Zm10 0h4v4h-2V5h-2V3ZM5 17h2v2h2v2H5v-4Zm12 0h2v4h-4v-2h2v-2ZM8 7h2v10H8V7Zm3 0h2v10h-2V7Zm3 0h2v10h-2V7Z"/></svg>
+                <svg class="ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-scan"></use></svg>
                 <span>Scan Again</span>
               </div>
               <div class="scan-mini">
@@ -1505,11 +1558,11 @@
               <div class="screen">
                 <div class="sales-topbar">
                   <div class="sales-action">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10.5 4a6.5 6.5 0 1 1 0 13 6.5 6.5 0 0 1 0-13Zm0 2a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9Zm5.7 10.3a1 1 0 0 1 1.4 0l2.1 2.1a1 1 0 1 1-1.4 1.4l-2.1-2.1a1 1 0 0 1 0-1.4Z"/></svg>
+                    <svg class="ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-search"></use></svg>
                     <span>Search Product</span>
                   </div>
                   <div class="sales-action">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 3h4v2H7v2H5V3Zm10 0h4v4h-2V5h-2V3ZM5 17h2v2h2v2H5v-4Zm12 0h2v4h-4v-2h2v-2ZM8 7h2v10H8V7Zm3 0h2v10h-2V7Zm3 0h2v10h-2V7Z"/></svg>
+                    <svg class="ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-scan"></use></svg>
                     <span>Scan Barcode</span>
                   </div>
                 </div>
@@ -1566,7 +1619,7 @@
             <p>Create your website in just one minute without any coding skills, and let your customers request information about your products.</p>
           </div>
           <div class="url-mock domain" aria-label="Custom domain preview">
-            <svg class="url-lock" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17 9h-1V7a4 4 0 1 0-8 0v2H7a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2zm-6-2a2 2 0 1 1 4 0v2h-4V7z"/></svg>
+            <svg class="ix url-lock" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-lock"></use></svg>
             <div class="url-text">
               <span class="url-prefix">https://sooda.store/</span><span class="url-value" data-typing></span><span class="caret"></span>
             </div>
@@ -1596,16 +1649,16 @@
       <h2>Products Inventory</h2>
       <p style="color:var(--ink-mute); font-size:17px; margin-bottom:28px">Keep your product inventory organized and up‑to‑date.</p>
       <div class="feat-list">
-        <div class="feat-item"><span class="feat-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 4 7v10l8 4 8-4V7l-8-4Zm-3 7h6v8H9v-8Z"/></svg></span> Inventory management</div>
-        <div class="feat-item"><span class="feat-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M10.5 4a1 1 0 0 1 1 1v5.5H17a1 1 0 1 1 0 2h-5.5V18a1 1 0 1 1-2 0v-5.5H4a1 1 0 0 1 0-2h5.5V5a1 1 0 0 1 1-1Z"/></svg></span> Control quantities</div>
-        <div class="feat-item"><span class="feat-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 6h2v12H4V6Zm4 1h1v10H8V7Zm3 0h2v10h-2V7Zm4-1h1v12h-1V6Zm3 1h2v10h-2V7Z"/></svg></span> Generate or scan barcodes to add</div>
-        <div class="feat-item"><span class="feat-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.8 2.5a1 1 0 0 1 1 1V5h2.2a1 1 0 1 1 0 2h-4.4a2.3 2.3 0 1 0 0 4.6h.8a4.3 4.3 0 1 1 0 8.6H10a1 1 0 1 1 0-2h4.1a2.3 2.3 0 1 0 0-4.6h-.8a4.3 4.3 0 0 1 0-8.6H11V3.5a1 1 0 0 1 1-1h.8Z"/></svg></span> Wholesale prices, taxes, and minimum selling prices</div>
-        <div class="feat-item"><span class="feat-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2h-6v6a1 1 0 1 1-2 0v-6H5a1 1 0 0 1 0-2h6V5a1 1 0 0 1 1-1Z"/></svg></span> And add many more product properties</div>
+        <div class="feat-item"><span class="feat-icon"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-solid-box"></use></svg></span> Inventory management</div>
+        <div class="feat-item"><span class="feat-icon"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-solid-add"></use></svg></span> Control quantities</div>
+        <div class="feat-item"><span class="feat-icon"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-solid-barcode"></use></svg></span> Generate or scan barcodes to add</div>
+        <div class="feat-item"><span class="feat-icon"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-solid-money"></use></svg></span> Wholesale prices, taxes, and minimum selling prices</div>
+        <div class="feat-item"><span class="feat-icon"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-solid-add"></use></svg></span> And add many more product properties</div>
       </div>
     </div>
     <div class="side-img">
       <div class="side-bubble tl">
-        <span class="ico" style="background: linear-gradient(135deg, #4ad9b1, #1f9c7a)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 4h8a2 2 0 0 1 2 2v12.5l-3.4-1.8-2.6 1.8-2.6-1.8L6 18.5V6a2 2 0 0 1 2-2Zm1 4v2h6V8H9Zm0 4v2h4v-2H9Z"/></svg></span>
+        <span class="ico" style="background: linear-gradient(135deg, #4ad9b1, #1f9c7a)"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-solid-document"></use></svg></span>
         <div class="meta"><b>SKU 02841</b><span>Scanned · in stock</span></div>
       </div>
       <div class="side-phone">
@@ -1624,7 +1677,7 @@
         </div>
       </div>
       <div class="side-bubble br">
-        <span class="ico" style="background: linear-gradient(135deg, #6e94ff, #2f6bff)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.8 2.5a1 1 0 0 1 1 1V5H16a1 1 0 1 1 0 2h-4.4a2.3 2.3 0 1 0 0 4.6h.8a4.3 4.3 0 1 1 0 8.6H10a1 1 0 1 1 0-2h4.1a2.3 2.3 0 1 0 0-4.6h-.8a4.3 4.3 0 0 1 0-8.6H11V3.5a1 1 0 0 1 1-1h.8Z"/></svg></span>
+        <span class="ico" style="background: linear-gradient(135deg, #6e94ff, #2f6bff)"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-solid-money"></use></svg></span>
         <div class="meta"><b>Auto‑synced</b><span>iOS · Android</span></div>
       </div>
     </div>
@@ -1638,15 +1691,15 @@
       <h2>Sell now</h2>
       <p style="color:var(--ink-mute); font-size:17px; margin-bottom:28px">Effortlessly manage your sales process from start to finish.</p>
       <div class="feat-list">
-        <div class="feat-item"><span class="feat-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m15.7 5 3.3 3.3v-2.1a1 1 0 1 1 2 0V12h-5.8a1 1 0 0 1 0-2H18L14.3 6.4a1 1 0 1 1 1.4-1.4ZM3 18.5V14a1 1 0 1 1 2 0v4.5h3V12a1 1 0 1 1 2 0v6.5h3V9a1 1 0 1 1 2 0v9.5h4a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1.5Z"/></svg></span> Track your sales</div>
-        <div class="feat-item"><span class="feat-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 13a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v6H5a1 1 0 0 1-1-1v-5Zm6-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v11h-4V8Zm6-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v14h-4V5ZM3 20a1 1 0 0 1 1-1h17a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1Z"/></svg></span> Daily reports</div>
-        <div class="feat-item"><span class="feat-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.8 2.5a1 1 0 0 1 1 1V5H16a1 1 0 1 1 0 2h-4.4a2.3 2.3 0 1 0 0 4.6h.8a4.3 4.3 0 1 1 0 8.6H10a1 1 0 1 1 0-2h4.1a2.3 2.3 0 1 0 0-4.6h-.8a4.3 4.3 0 0 1 0-8.6H11V3.5a1 1 0 0 1 1-1h.8Z"/></svg></span> Minimum selling price control</div>
-        <div class="feat-item"><span class="feat-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M10.5 4a6.5 6.5 0 1 1 0 13 6.5 6.5 0 0 1 0-13Zm0 2a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9Zm5.7 10.3a1 1 0 0 1 1.4 0l2.1 2.1a1 1 0 1 1-1.4 1.4l-2.1-2.1a1 1 0 0 1 0-1.4Z"/></svg></span> Scan your product or search</div>
+        <div class="feat-item"><span class="feat-icon"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-solid-chart-up"></use></svg></span> Track your sales</div>
+        <div class="feat-item"><span class="feat-icon"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-solid-chart-bar"></use></svg></span> Daily reports</div>
+        <div class="feat-item"><span class="feat-icon"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-solid-money"></use></svg></span> Minimum selling price control</div>
+        <div class="feat-item"><span class="feat-icon"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-solid-search"></use></svg></span> Scan your product or search</div>
       </div>
     </div>
     <div class="side-img">
       <div class="side-bubble tl">
-        <span class="ico" style="background: linear-gradient(135deg, #ffd874, #f5a900); color:#5a3d00"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m14.8 5.2 4 4a1 1 0 1 1-1.4 1.4L15 8.2V18a1 1 0 1 1-2 0V8.2l-2.4 2.4a1 1 0 1 1-1.4-1.4l4-4a1 1 0 0 1 1.6 0Z"/></svg></span>
+        <span class="ico" style="background: linear-gradient(135deg, #ffd874, #f5a900); color:#5a3d00"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-solid-chart-up"></use></svg></span>
         <div class="meta"><b>$2,847 today</b><span>+12% vs yesterday</span></div>
       </div>
       <div class="side-phone">
@@ -1676,7 +1729,7 @@
         </div>
       </div>
       <div class="side-bubble br">
-        <span class="ico" style="background: linear-gradient(135deg, #ff8aa8, #d9477a)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M10.5 4a6.5 6.5 0 1 1 0 13 6.5 6.5 0 0 1 0-13Zm0 2a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9Zm5.7 10.3a1 1 0 0 1 1.4 0l2.1 2.1a1 1 0 1 1-1.4 1.4l-2.1-2.1a1 1 0 0 1 0-1.4Z"/></svg></span>
+        <span class="ico" style="background: linear-gradient(135deg, #ff8aa8, #d9477a)"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-solid-search"></use></svg></span>
         <div class="meta"><b>Scan to sell</b><span>Barcode ready</span></div>
       </div>
     </div>
@@ -1690,14 +1743,14 @@
       <h2>Coming in the near future</h2>
     </div>
     <div class="chips">
-      <div class="chip"><span class="chip-ic-wrap"><svg class="chip-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm8 1.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM4 18a4 4 0 0 1 4-4h.1a4 4 0 0 1 3.9 4v1H4v-1Zm10 1v-1a3.5 3.5 0 0 1 3.5-3.5h.2A3.3 3.3 0 0 1 21 18v1h-7Z"/></svg></span> Teams support</div>
-      <div class="chip"><span class="chip-ic-wrap"><svg class="chip-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M5 9.5 7.3 5h9.4L19 9.5V18a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V9.5Zm2.3-2-1 2h11.4l-1-2H7.3Z"/></svg></span> Your online store</div>
-      <div class="chip"><span class="chip-ic-wrap"><svg class="chip-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M5 4h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-5v2h3a1 1 0 1 1 0 2H7a1 1 0 1 1 0-2h3v-2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/></svg></span> Web version</div>
-      <div class="chip"><span class="chip-ic-wrap"><svg class="chip-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M4 13a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v6H5a1 1 0 0 1-1-1v-5Zm6-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v11h-4V8Zm6-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v14h-4V5Z"/></svg></span> Statistics</div>
-      <div class="chip"><span class="chip-ic-wrap"><svg class="chip-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9 9 9 0 0 0-9-9Zm5 9a7 7 0 0 1-.9 3.5H13v-7a7 7 0 0 1 4 3.5ZM11 5.3v6.7H7.9A7 7 0 0 1 11 5.3ZM7.9 14H11v4.7A7 7 0 0 1 7.9 14Zm5.1 4.7V14h3.1a7 7 0 0 1-3.1 4.7Z"/></svg></span> Multi currency support</div>
-      <div class="chip"><span class="chip-ic-wrap"><svg class="chip-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M5 6h6a1 1 0 0 1 0 2H9.1l1.4 4.1a1 1 0 0 1-1.9.6L7.1 8H5a1 1 0 0 1 0-2Zm9 0h5a1 1 0 0 1 .8 1.6l-2.3 3 2.3 3A1 1 0 0 1 19 15h-5a1 1 0 1 1 0-2h3l-1.5-2 1.5-2h-3a1 1 0 1 1 0-2Zm-8.5 9a1 1 0 0 1 1.4 0l1.1 1.1 1.1-1.1a1 1 0 0 1 1.4 1.4L9.4 17.5l1.1 1.1A1 1 0 1 1 9.1 20L8 18.9 6.9 20a1 1 0 1 1-1.4-1.4l1.1-1.1-1.1-1.1a1 1 0 0 1 0-1.4Z"/></svg></span> New languages</div>
-      <div class="chip"><span class="chip-ic-wrap"><svg class="chip-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M14.5 3a8.5 8.5 0 1 0 6.5 14 8 8 0 1 1-6.5-14Z"/></svg></span> Dark theme</div>
-      <div class="chip"><span class="chip-ic-wrap"><svg class="chip-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-4l-3 3v-3H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm2 4v2h8V8H8Zm0 4v2h5v-2H8Z"/></svg></span> Additional product properties</div>
+      <div class="chip"><span class="chip-ic-wrap"><svg class="chip-ic ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-users"></use></svg></span> Teams support</div>
+      <div class="chip"><span class="chip-ic-wrap"><svg class="chip-ic ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-shop"></use></svg></span> Your online store</div>
+      <div class="chip"><span class="chip-ic-wrap"><svg class="chip-ic ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-monitor"></use></svg></span> Web version</div>
+      <div class="chip"><span class="chip-ic-wrap"><svg class="chip-ic ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-chart-bar"></use></svg></span> Statistics</div>
+      <div class="chip"><span class="chip-ic-wrap"><svg class="chip-ic ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-globe"></use></svg></span> Multi currency support</div>
+      <div class="chip"><span class="chip-ic-wrap"><svg class="chip-ic ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-language"></use></svg></span> New languages</div>
+      <div class="chip"><span class="chip-ic-wrap"><svg class="chip-ic ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-moon"></use></svg></span> Dark theme</div>
+      <div class="chip"><span class="chip-ic-wrap"><svg class="chip-ic ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-message"></use></svg></span> Additional product properties</div>
     </div>
     <p class="chips-foot">And so much more coming!</p>
   </div>
@@ -1751,59 +1804,12 @@
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer id="download">
-  <div class="foot-shell">
-    <div class="footer-hero">
-      <h2>Start using Sooda for free now</h2>
-      <p>Free version always will remain free.</p>
-      <div class="stores">
-        <a href="#" class="btn-store light">
-          <span class="store-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 3h8a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3Zm4 14.8a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4ZM9 6.5v7h6v-7H9Z"/></svg></span>
-          <div><small style="color:#5a6173">Download on</small><strong>App Store</strong></div>
-        </a>
-        <a href="#" class="btn-store light">
-          <span class="store-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm4.4 4.3a1 1 0 0 0-1.4.86v5.62a1 1 0 0 0 1.5.86l4.9-2.81a1 1 0 0 0 0-1.72l-5-2.81Z"/></svg></span>
-          <div><small style="color:#5a6173">Get it on</small><strong>Google Play</strong></div>
-        </a>
-      </div>
-    </div>
-    <div class="foot-divider"></div>
-    <div class="foot-grid">
-      <div class="foot-brand">
-        <a href="/" class="logo" aria-label="Sooda home"><img src="/logo-white.svg" alt="Sooda" /></a>
-        <p>Inventory, sales, and storefront tools designed to help small businesses move faster with less friction.</p>
-      </div>
-      <div class="foot-side">
-        <div class="foot-links">
-          <a href="/#faq">Help</a>
-          <a href="mailto:hello@sooda.app">Contact us</a>
-          <a href="/terms.html">Terms of Use</a>
-          <a href="/privacy.html">Privacy Policy</a>
-        </div>
-        <div class="socials">
-          <a href="#" class="social" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Zm5 5a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm5.2-.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2Z"/></svg></a>
-          <a href="#" class="social" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 4h3l-7 8 8 12h-6l-5-7-6 7H2l8-9L2 4h6l5 6 5-6Z"/></svg></a>
-          <a href="#" class="social" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.2 8.2a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2ZM4.5 9.8h3.4V20H4.5V9.8Zm5.4 0H13v1.4c.6-1 1.8-1.8 3.7-1.8 3 0 4.8 1.8 4.8 5.5V20H18v-4.7c0-1.7-.6-2.7-2-2.7-1.2 0-1.8.8-2.1 1.5-.1.2-.1.6-.1.9V20H9.9V9.8Z"/></svg></a>
-        </div>
-      </div>
-    </div>
-    <div class="copy">
-      <span>© 2025 Sooda. All rights reserved.</span>
-    </div>
-  </div>
-</footer>
-
-<section class="endcap" aria-label="Extended footer">
+<section id="download" class="endcap" aria-label="Extended footer">
   <div class="wrap">
     <div class="endcap-grid">
       <div class="endcap-col endcap-brand">
         <img src="/logo-white.svg" alt="Sooda" />
         <p>Inventory, sales, storefront, and operations tools designed to help modern small businesses move faster with less friction.</p>
-        <div class="endcap-tag">
-          <span class="dot"></span>
-          <span>Built for small business operators</span>
-        </div>
       </div>
       <div class="endcap-col">
         <div class="endcap-title">Product</div>
@@ -1834,17 +1840,17 @@
     <div class="endcap-bottom">
       <div class="endcap-meta">
         <span>© 2025 Sooda. All rights reserved.</span>
-        <a href="/terms.html">Terms</a>
-        <a href="/privacy.html">Privacy</a>
       </div>
       <div class="endcap-socials">
-        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Zm5 5a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm5.2-.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2Z"/></svg></a>
-        <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 4h3l-7 8 8 12h-6l-5-7-6 7H2l8-9L2 4h6l5 6 5-6Z"/></svg></a>
-        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.2 8.2a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2ZM4.5 9.8h3.4V20H4.5V9.8Zm5.4 0H13v1.4c.6-1 1.8-1.8 3.7-1.8 3 0 4.8 1.8 4.8 5.5V20H18v-4.7c0-1.7-.6-2.7-2-2.7-1.2 0-1.8.8-2.1 1.5-.1.2-.1.6-.1.9V20H9.9V9.8Z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg class="ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-instagram"></use></svg></a>
+        <a href="#" aria-label="Twitter"><svg class="ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-twitter"></use></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg class="ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-linkedin"></use></svg></a>
       </div>
     </div>
   </div>
-  <div class="endcap-wordmark">sooda</div>
+  <div class="endcap-wordmark" aria-hidden="true">
+    <img src="/logo-white.svg" alt="" />
+  </div>
 </section>
 
 <script>
@@ -1897,24 +1903,41 @@
     });
 
     let paused = false;
+    let inView = false;
     let rafId = 0;
     let lastTime = 0;
     const loopPoint = row.scrollWidth / 2;
     const speed = 0.035; // px per ms for a gentle Framer-like drift
 
+    const shouldRun = () => !paused && inView && !document.hidden;
+
     const step = (time) => {
+      if (!shouldRun()) {
+        rafId = 0;
+        lastTime = 0;
+        return;
+      }
+
       if (!lastTime) lastTime = time;
       const delta = time - lastTime;
       lastTime = time;
 
-      if (!paused) {
-        row.scrollLeft += delta * speed;
-        if (row.scrollLeft >= loopPoint) {
-          row.scrollLeft -= loopPoint;
-        }
+      row.scrollLeft += delta * speed;
+      if (row.scrollLeft >= loopPoint) {
+        row.scrollLeft -= loopPoint;
       }
 
       rafId = window.requestAnimationFrame(step);
+    };
+
+    const syncLoop = () => {
+      if (shouldRun()) {
+        if (!rafId) rafId = window.requestAnimationFrame(step);
+      } else if (rafId) {
+        window.cancelAnimationFrame(rafId);
+        rafId = 0;
+        lastTime = 0;
+      }
     };
 
     const pause = () => { paused = true; };
@@ -1929,10 +1952,24 @@
     row.addEventListener('focusout', resume);
     row.addEventListener('touchstart', pause, { passive: true });
     row.addEventListener('touchend', resume, { passive: true });
+    row.addEventListener('mouseenter', syncLoop);
+    row.addEventListener('mouseleave', syncLoop);
+    row.addEventListener('focusin', syncLoop);
+    row.addEventListener('focusout', syncLoop);
+    row.addEventListener('touchstart', syncLoop, { passive: true });
+    row.addEventListener('touchend', syncLoop, { passive: true });
 
-    rafId = window.requestAnimationFrame(step);
+    const observer = new IntersectionObserver((entries) => {
+      inView = entries[0]?.isIntersecting ?? false;
+      syncLoop();
+    }, { threshold: 0.15 });
+
+    observer.observe(row);
+    document.addEventListener('visibilitychange', syncLoop);
 
     window.addEventListener('beforeunload', () => {
+      observer.disconnect();
+      document.removeEventListener('visibilitychange', syncLoop);
       window.cancelAnimationFrame(rafId);
     }, { once: true });
   })();

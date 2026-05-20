@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="ix-mobile" viewBox="0 0 24 24">
+    <rect x="7" y="2.75" width="10" height="18.5" rx="3"/>
+    <path d="M10 6.5h4"/>
+    <circle cx="12" cy="17.5" r="1"/>
+  </symbol>
+  <symbol id="ix-play" viewBox="0 0 24 24">
+    <rect x="3.5" y="3.5" width="17" height="17" rx="4"/>
+    <path d="m10 8.5 5 3.5-5 3.5z"/>
+  </symbol>
+  <symbol id="ix-scan" viewBox="0 0 24 24">
+    <path d="M8 4H6a2 2 0 0 0-2 2v2"/>
+    <path d="M16 4h2a2 2 0 0 1 2 2v2"/>
+    <path d="M8 20H6a2 2 0 0 1-2-2v-2"/>
+    <path d="M16 20h2a2 2 0 0 0 2-2v-2"/>
+    <path d="M9 8v8"/>
+    <path d="M12 7v10"/>
+    <path d="M15 8v8"/>
+  </symbol>
+  <symbol id="ix-search" viewBox="0 0 24 24">
+    <circle cx="11" cy="11" r="6"/>
+    <path d="m20 20-3.5-3.5"/>
+  </symbol>
+  <symbol id="ix-lock" viewBox="0 0 24 24">
+    <rect x="5" y="10" width="14" height="10" rx="2.5"/>
+    <path d="M8.5 10V7.75a3.5 3.5 0 1 1 7 0V10"/>
+  </symbol>
+  <symbol id="ix-box" viewBox="0 0 24 24">
+    <path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"/>
+    <path d="m4 7.5 8 4.5 8-4.5"/>
+    <path d="M12 12v9"/>
+  </symbol>
+  <symbol id="ix-add" viewBox="0 0 24 24">
+    <path d="M12 5v14"/>
+    <path d="M5 12h14"/>
+  </symbol>
+  <symbol id="ix-barcode" viewBox="0 0 24 24">
+    <path d="M5 6v12"/>
+    <path d="M8 7v10"/>
+    <path d="M11 6v12"/>
+    <path d="M14 8v8"/>
+    <path d="M17 6v12"/>
+    <path d="M20 7v10"/>
+  </symbol>
+  <symbol id="ix-money" viewBox="0 0 24 24">
+    <path d="M12 3v18"/>
+    <path d="M16 7.5c0-1.93-1.79-3.5-4-3.5s-4 1.57-4 3.5 1.79 3.5 4 3.5 4 1.57 4 3.5-1.79 3.5-4 3.5-4-1.57-4-3.5"/>
+  </symbol>
+  <symbol id="ix-document" viewBox="0 0 24 24">
+    <path d="M8 3.5h6l4 4V19a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 7 19V5A1.5 1.5 0 0 1 8.5 3.5Z"/>
+    <path d="M14 3.5V8h4"/>
+    <path d="M10 12h4"/>
+    <path d="M10 15.5h4"/>
+  </symbol>
+  <symbol id="ix-chart-up" viewBox="0 0 24 24">
+    <path d="M4 19.5h16"/>
+    <path d="m7 14 3-3 3 2.5 4-5.5"/>
+    <path d="M17 8h3v3"/>
+  </symbol>
+  <symbol id="ix-chart-bar" viewBox="0 0 24 24">
+    <path d="M4 19.5h16"/>
+    <path d="M7 16v-4"/>
+    <path d="M12 16V8"/>
+    <path d="M17 16v-6"/>
+  </symbol>
+  <symbol id="ix-shop" viewBox="0 0 24 24">
+    <path d="M4.5 9.5 6.5 5h11l2 4.5"/>
+    <path d="M5.5 9.5h13v8.5A1.5 1.5 0 0 1 17 19.5H7A1.5 1.5 0 0 1 5.5 18Z"/>
+    <path d="M9.5 13h5"/>
+  </symbol>
+  <symbol id="ix-monitor" viewBox="0 0 24 24">
+    <rect x="3.5" y="4.5" width="17" height="11" rx="2.5"/>
+    <path d="M9.5 19.5h5"/>
+    <path d="M12 15.5v4"/>
+  </symbol>
+  <symbol id="ix-users" viewBox="0 0 24 24">
+    <circle cx="9" cy="9" r="3"/>
+    <path d="M4.5 18a4.5 4.5 0 0 1 9 0"/>
+    <circle cx="17" cy="10" r="2.5"/>
+    <path d="M14.5 18a3.5 3.5 0 0 1 5.5-2.8"/>
+  </symbol>
+  <symbol id="ix-globe" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="8.5"/>
+    <path d="M3.5 12h17"/>
+    <path d="M12 3.5c2.7 2.3 4.3 5.3 4.3 8.5S14.7 18.2 12 20.5c-2.7-2.3-4.3-5.3-4.3-8.5S9.3 5.8 12 3.5Z"/>
+  </symbol>
+  <symbol id="ix-language" viewBox="0 0 24 24">
+    <path d="M4.5 7.5H12"/>
+    <path d="M8.25 7.5c0 4.5-1.75 7.5-3.75 9"/>
+    <path d="M8.25 7.5c0 4.5 1.75 7.5 3.75 9"/>
+    <path d="M13 9.5h6.5"/>
+    <path d="m16.25 9.5-3 8"/>
+    <path d="m19.25 17.5-3-8"/>
+  </symbol>
+  <symbol id="ix-moon" viewBox="0 0 24 24">
+    <path d="M19 14.5A7.5 7.5 0 0 1 9.5 5a8.5 8.5 0 1 0 9.5 9.5Z"/>
+  </symbol>
+  <symbol id="ix-message" viewBox="0 0 24 24">
+    <path d="M6 5h12a2.5 2.5 0 0 1 2.5 2.5v7A2.5 2.5 0 0 1 18 17H11l-4 3v-3H6A2.5 2.5 0 0 1 3.5 14.5v-7A2.5 2.5 0 0 1 6 5Z"/>
+    <path d="M8 10h8"/>
+    <path d="M8 13h5"/>
+  </symbol>
+  <symbol id="ix-bell" viewBox="0 0 24 24">
+    <path d="M6.5 16.5h11"/>
+    <path d="M8 16.5V10a4 4 0 1 1 8 0v6.5"/>
+    <path d="M10 19a2 2 0 0 0 4 0"/>
+  </symbol>
+  <symbol id="ix-arrow-right" viewBox="0 0 24 24">
+    <path d="M9 6l6 6-6 6"/>
+  </symbol>
+  <symbol id="ix-instagram" viewBox="0 0 24 24">
+    <rect x="4" y="4" width="16" height="16" rx="4.5"/>
+    <circle cx="12" cy="12" r="3.5"/>
+    <circle cx="17" cy="7" r="0.75" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="ix-twitter" viewBox="0 0 24 24">
+    <path d="m4.5 5.5 15 13"/>
+    <path d="M18.5 5.5h-4.2l-4.1 4.7-4-4.7H4.5"/>
+    <path d="m9.6 14.3-5.1 4.2"/>
+    <path d="m14.4 9.7 4.1-4.2"/>
+  </symbol>
+  <symbol id="ix-linkedin" viewBox="0 0 24 24">
+    <path d="M7 10v8"/>
+    <path d="M12 18v-4.5A2.5 2.5 0 0 1 14.5 11 2.5 2.5 0 0 1 17 13.5V18"/>
+    <path d="M12 13a3 3 0 0 1 2.75-2"/>
+    <circle cx="7" cy="7" r="1.25" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="ix-solid-box" viewBox="0 0 24 24">
+    <path d="M12 2.75a2 2 0 0 1 .97.25l7 3.9A2 2 0 0 1 21 8.64v6.72a2 2 0 0 1-1.03 1.74l-7 3.9a2 2 0 0 1-1.94 0l-7-3.9A2 2 0 0 1 3 15.36V8.64A2 2 0 0 1 4.03 6.9l7-3.9A2 2 0 0 1 12 2.75Z"/>
+    <path d="m4.7 7.55 7.3 4.08 7.3-4.08" fill="#fff" fill-opacity=".3"/>
+    <path d="M12 11.63v8.97" fill="#fff" fill-opacity=".3"/>
+  </symbol>
+  <symbol id="ix-solid-add" viewBox="0 0 24 24">
+    <path d="M12 3.5a1.5 1.5 0 0 1 1.5 1.5v5.5H19a1.5 1.5 0 1 1 0 3h-5.5V19a1.5 1.5 0 1 1-3 0v-5.5H5a1.5 1.5 0 1 1 0-3h5.5V5A1.5 1.5 0 0 1 12 3.5Z"/>
+  </symbol>
+  <symbol id="ix-solid-barcode" viewBox="0 0 24 24">
+    <path d="M4 5.5h1.8v13H4zm3 1h1.2v11H7zm2.7-1h2v13h-2zm3.7 1h1.1v11h-1.1zm2.6-1h2v13h-2zm3.4 1H21v11h-1.1z"/>
+  </symbol>
+  <symbol id="ix-solid-money" viewBox="0 0 24 24">
+    <path d="M12.5 2.75a1.5 1.5 0 0 0-3 0V4.3a4.83 4.83 0 0 0 .9 9.58h2.2a1.83 1.83 0 1 1 0 3.65H7.75a1.5 1.5 0 0 0 0 3h1.75v1a1.5 1.5 0 0 0 3 0v-1.18a4.83 4.83 0 0 0-.9-9.57H9.4a1.83 1.83 0 0 1 0-3.66h4.85a1.5 1.5 0 0 0 0-3H12.5V2.75Z"/>
+  </symbol>
+  <symbol id="ix-solid-document" viewBox="0 0 24 24">
+    <path d="M8.5 3.5A2.5 2.5 0 0 0 6 6v12a2.5 2.5 0 0 0 2.5 2.5h7A2.5 2.5 0 0 0 18 18V9.06a2.5 2.5 0 0 0-.73-1.77l-3.06-3.06A2.5 2.5 0 0 0 12.44 3.5H8.5Z"/>
+    <path d="M9.5 10.25h5M9.5 13.5h5" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M13 4.4v3.2a1 1 0 0 0 1 1h3.2" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </symbol>
+  <symbol id="ix-solid-chart-up" viewBox="0 0 24 24">
+    <path d="M4 19.5a1.5 1.5 0 0 1 0-3h1.54l3.36-3.36a1.5 1.5 0 0 1 1.84-.23l2.16 1.45 4.39-5.48A1.5 1.5 0 0 1 18.5 8.3h1V6.5a1.5 1.5 0 1 1 3 0V11A1.5 1.5 0 0 1 21 12.5h-4.5a1.5 1.5 0 1 1 0-3h.43l-3.57 4.46a1.5 1.5 0 0 1-1.98.31l-2.35-1.58L7.62 16.5H20a1.5 1.5 0 1 1 0 3H4Z"/>
+  </symbol>
+  <symbol id="ix-solid-chart-bar" viewBox="0 0 24 24">
+    <path d="M4 19.5a1.5 1.5 0 1 1 0-3h.5V13A1.5 1.5 0 0 1 6 11.5h1A1.5 1.5 0 0 1 8.5 13v3.5h2V8A1.5 1.5 0 0 1 12 6.5h1A1.5 1.5 0 0 1 14.5 8v8.5h2V10A1.5 1.5 0 0 1 18 8.5h1A1.5 1.5 0 0 1 20.5 10v6.5h.5a1.5 1.5 0 1 1 0 3H4Z"/>
+  </symbol>
+  <symbol id="ix-solid-search" viewBox="0 0 24 24">
+    <path d="M10.75 3.5a7.25 7.25 0 1 0 4.56 12.88l3.15 3.16a1.5 1.5 0 0 0 2.12-2.12l-3.16-3.15A7.25 7.25 0 0 0 10.75 3.5Z"/>
+  </symbol>
+</svg>
