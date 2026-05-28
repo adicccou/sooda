@@ -8,10 +8,21 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #ffffff;
-    --bg-soft: #f6f7fa;
-    --bg-soft-2: #eef1f6;
+	  :root {
+	    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+	    --surface-page: #ffffff;
+	    --surface-section-soft: #f6f7fa;
+	    --surface-section-muted: #eef1f6;
+	    --surface-card: #ffffff;
+	    --surface-card-soft: #f8faff;
+	    --surface-card-blue: #eef3ff;
+	    --surface-footer: #07163f;
+	    --surface-dark: #0b1120;
+	    --surface-nav-brand: #0638F6;
+	    --surface-nav-glass: rgba(255,255,255,0.96);
+	    --bg: var(--surface-page);
+	    --bg-soft: var(--surface-section-soft);
+    --bg-soft-2: var(--surface-section-muted);
     --ink: #0b0f1c;
     --ink-2: #2a2f3d;
     --ink-mute: #62697b;
@@ -21,6 +32,9 @@
     --brand: #2f6bff;
     --brand-2: #1f4fd1;
     --brand-soft: #eaf0ff;
+	    --brand-base: #0638F6;
+	    --brand-hero-mid: #163ce8;
+	    --brand-dark: var(--surface-footer);
     --brand-glow: rgba(47,107,255,0.18);
     --accent-yellow: #ffd84a;
     --accent-pink: #ff7aa8;
@@ -28,31 +42,68 @@
     --radius-lg: 28px;
     --radius-md: 18px;
     --radius-sm: 12px;
-    --shadow-sm: 0 1px 2px rgba(13,18,32,0.04), 0 2px 6px -2px rgba(13,18,32,0.05);
-    --shadow-md: 0 8px 24px -10px rgba(13,18,32,0.18), 0 2px 6px -2px rgba(13,18,32,0.06);
-    --shadow-lg: 0 30px 60px -28px rgba(13,18,32,0.32), 0 10px 24px -12px rgba(13,18,32,0.12);
-  }
+	    --shadow-sm: 0 1px 2px rgba(13,18,32,0.04), 0 2px 6px -2px rgba(13,18,32,0.05);
+	    --shadow-md: 0 8px 24px -10px rgba(13,18,32,0.18), 0 2px 6px -2px rgba(13,18,32,0.06);
+	    --shadow-lg: 0 30px 60px -28px rgba(13,18,32,0.32), 0 10px 24px -12px rgba(13,18,32,0.12);
+	    --text-xs: 12px;
+	    --text-sm: 14px;
+	    --text-base: 15px;
+	    --text-md: 16px;
+	    --text-lg: 17px;
+	    --text-xl: 18px;
+	    --weight-regular: 400;
+	    --weight-medium: 500;
+	    --weight-semibold: 600;
+	    --weight-bold: 700;
+	    --weight-extrabold: 800;
+	    --title-card: 22px;
+	    --title-panel: 26px;
+	    --title-price: clamp(30px, 3vw, 38px);
+	    --title-section: clamp(34px, 4vw, 52px);
+	    --title-subsection: clamp(32px, 3.5vw, 44px);
+	    --title-banner: clamp(28px, 3vw, 42px);
+	    --title-hero: clamp(44px, 5.4vw, 64px);
+	    --title-footer: clamp(34px, 4.4vw, 56px);
+	    --title-footer-mobile: 42px;
+	    --lh-body: 1.55;
+	    --lh-tight: 1.08;
+	    --track-normal: 0;
+	    --track-tight: 0;
+	    --track-display: 0;
+	    --gradient-page-glow: radial-gradient(900px 600px at 90% -10%, rgba(47,107,255,0.07), transparent 60%);
+	    --gradient-brand-hero: var(--brand-base);
+	    --gradient-card: linear-gradient(180deg, var(--surface-card) 0%, var(--surface-card-soft) 100%);
+	    --gradient-card-muted: linear-gradient(180deg, #f5f7fb 0%, var(--surface-section-muted) 100%);
+	    --gradient-card-featured: radial-gradient(420px 260px at 50% 0%, rgba(47,107,255,0.13), transparent 72%), linear-gradient(180deg, var(--surface-card) 0%, var(--surface-card-blue) 100%);
+	    --gradient-placeholder: linear-gradient(135deg, rgba(47,107,255,0.065) 25%, transparent 25%) 0 0 / 22px 22px, linear-gradient(135deg, transparent 75%, rgba(47,107,255,0.065) 75%) 0 0 / 22px 22px, linear-gradient(180deg, #ffffff 0%, #edf3ff 100%);
+	    --gradient-placeholder-dark: linear-gradient(135deg, rgba(255,255,255,0.07) 25%, transparent 25%) 0 0 / 20px 20px, linear-gradient(135deg, transparent 75%, rgba(255,255,255,0.06) 75%) 0 0 / 20px 20px, linear-gradient(135deg, #111827 0%, #17233a 100%);
+	    --gradient-banner: radial-gradient(820px 420px at 100% 0%, rgba(255,255,255,0.18), transparent 62%), radial-gradient(620px 360px at 0% 100%, rgba(110,148,255,0.32), transparent 64%), linear-gradient(135deg, var(--brand-base) 0%, #174BFA 54%, var(--brand-2) 100%);
+	    --gradient-footer-shell: radial-gradient(circle at 50% 18%, rgba(47,107,255,0.28), transparent 30%), radial-gradient(circle at top right, rgba(47,107,255,0.26), transparent 28%), linear-gradient(135deg, var(--surface-dark) 0%, #101b37 100%);
+	    --gradient-media-scrim: linear-gradient(180deg, rgba(5,10,24,0.04) 0%, rgba(5,10,24,0.08) 32%, rgba(5,10,24,0.52) 100%);
+	    --gradient-media-bottom: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(10,18,40,0.2) 28%, rgba(10,18,40,0.5) 100%);
+	    --gradient-media-caption: linear-gradient(180deg, rgba(10,15,28,0) 0%, rgba(10,15,28,0.88) 100%);
+	  }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
-  body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    color: var(--ink);
-    background: var(--bg);
+	  body {
+	    font-family: var(--font-sans);
+	    font-size: var(--text-base);
+	    color: var(--ink);
+	    background: var(--bg);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    line-height: 1.5;
+	    line-height: var(--lh-body);
     text-rendering: optimizeLegibility;
   }
   body::before {
     content: "";
     position: fixed; inset: 0; pointer-events: none; z-index: -1;
-    background:
-      radial-gradient(900px 600px at 90% -10%, rgba(47,107,255,0.07), transparent 60%);
+    background: var(--gradient-page-glow);
   }
   a { color: inherit; text-decoration: none; }
   img { max-width: 100%; display: block; }
-  button { font-family: inherit; cursor: pointer; border: none; background: none; }
-  h1, h2, h3, h4 { margin: 0; letter-spacing: -0.02em; line-height: 1.08; font-weight: 700; }
+	  button { font-family: inherit; cursor: pointer; border: none; background: none; }
+	  h1, h2, h3, h4 { margin: 0; letter-spacing: var(--track-tight); line-height: var(--lh-tight); font-weight: var(--weight-bold); }
   p { margin: 0; }
   .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
 
@@ -63,7 +114,7 @@
     left: 0;
     right: 0;
     z-index: 50;
-    background: #0638F6;
+    background: var(--surface-nav-brand);
     border-bottom: 1px solid rgba(255,255,255,0.1);
     transition: background .28s ease, border-color .28s ease, box-shadow .28s ease;
   }
@@ -78,7 +129,7 @@
   }
   .logo img {
     display: block;
-    width: 132px;
+    width: 148px;
     height: auto;
   }
   .nav-links,
@@ -87,7 +138,7 @@
     transition: opacity .24s ease, color .24s ease, background .24s ease, box-shadow .24s ease;
   }
   .nav-links { display: flex; align-items: center; gap: 22px; margin-left: auto; }
-  .nav-links a { color: rgba(255,255,255,0.92); font-weight: 500; font-size: 15px; transition: opacity .15s; }
+	  .nav-links a { color: rgba(255,255,255,0.92); font-weight: var(--weight-medium); font-size: var(--text-base); transition: opacity .15s; }
   .nav-links a:hover { opacity: 0.78; }
   .nav-actions {
     display: flex;
@@ -98,7 +149,7 @@
   .btn {
     display: inline-flex; align-items: center; gap: 8px;
     padding: 10px 16px; border-radius: 999px;
-    font-weight: 600; font-size: 14px;
+	    font-weight: var(--weight-semibold); font-size: var(--text-sm);
     transition: transform .15s ease, background .2s, box-shadow .2s, color .2s;
   }
   .btn-ghost { color: var(--ink-2); }
@@ -110,22 +161,18 @@
   .btn-primary:hover { transform: translateY(-1px); background: #1c2436; box-shadow: 0 14px 28px -12px rgba(13,18,32,0.55); }
   .btn-store {
     background: #fff; color: #0d1220; padding: 12px 18px; border-radius: 14px;
-    display: inline-flex; align-items: center; gap: 10px; font-weight: 600;
+    display: inline-flex; align-items: center; gap: 10px; font-weight: var(--weight-semibold);
     transition: transform .15s ease, background .2s, box-shadow .2s;
     box-shadow: 0 10px 22px -14px rgba(13,18,32,0.28), inset 0 0 0 1px rgba(13,18,32,0.05);
   }
-  .btn-store small { font-size: 11px; font-weight: 500; opacity: 0.7; display: block; line-height: 1; margin-bottom: 2px; }
-  .btn-store strong { font-size: 16px; font-weight: 700; line-height: 1; display: block; letter-spacing: -0.01em; }
+	  .btn-store small { font-size: var(--text-xs); font-weight: var(--weight-medium); opacity: 0.7; display: block; line-height: 1; margin-bottom: 2px; }
+	  .btn-store strong { font-size: var(--text-md); font-weight: var(--weight-bold); line-height: 1; display: block; letter-spacing: var(--track-normal); }
   .ix {
     width: 20px;
     height: 20px;
     display: block;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.9;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    vector-effect: non-scaling-stroke;
+    fill: currentColor;
+    stroke: none;
   }
   .ix-solid {
     width: 20px;
@@ -159,10 +206,7 @@
     padding: 128px 0 0;
     position: relative;
     overflow: hidden;
-    background:
-      radial-gradient(900px 520px at 100% 20%, rgba(255,255,255,0.16), transparent 60%),
-      radial-gradient(760px 460px at 0% 100%, rgba(255,255,255,0.12), transparent 62%),
-      #0638F6;
+    background: var(--gradient-brand-hero);
     color: #fff;
     min-height: 760px;
   }
@@ -183,25 +227,41 @@
     border-radius: 999px;
     background: rgba(255,255,255,0.92);
     color: #0c1542;
-    font-size: 14px;
-    font-weight: 600;
+	    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
     margin-bottom: 16px;
   }
   .hero h1 {
-    font-size: clamp(44px, 5.4vw, 64px);
-    margin: 0 0 10px;
-    letter-spacing: -0.03em;
+	    font-size: var(--title-hero);
+	    margin: 0 0 10px;
+	    letter-spacing: var(--track-display);
     color: #fff;
-    line-height: 1.08;
+    line-height: var(--lh-tight);
   }
   .hero p.lead {
-    font-size: 16px; color: rgba(255,255,255,0.86); max-width: 440px; margin-bottom: 26px; line-height: 1.55;
+	    font-size: var(--text-lg); color: rgba(255,255,255,0.86); max-width: 460px; margin-bottom: 26px; line-height: var(--lh-body);
   }
   .hero-stores {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
     margin-top: 8px;
+  }
+  .store-badge {
+    display: inline-flex;
+    align-items: center;
+    line-height: 0;
+    border-radius: 10px;
+    transition: transform .16s ease, filter .16s ease;
+  }
+  .store-badge:hover {
+    transform: translateY(-2px);
+    filter: drop-shadow(0 14px 18px rgba(5, 13, 45, 0.16));
+  }
+  .store-badge img {
+    display: block;
+    width: auto;
+    height: 46px;
   }
   .hero-form {
     display: flex;
@@ -226,7 +286,7 @@
     background: rgba(255,255,255,0.12);
     color: #fff;
     font: inherit;
-    font-size: 14px;
+	    font-size: var(--text-sm);
   }
   .hero-form input::placeholder { color: rgba(255,255,255,0.82); }
   .hero-form button {
@@ -235,8 +295,8 @@
     border-radius: 12px;
     background: #0b1120;
     color: #fff;
-    font-size: 14px;
-    font-weight: 600;
+	    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -276,14 +336,14 @@
   /* Phone screen 1 — sales dashboard */
   .ps-status {
     display: flex; justify-content: space-between; align-items: center;
-    padding: 14px 22px 6px; font-size: 9px; font-weight: 600; color: var(--ink);
+    padding: 14px 22px 6px; font-size: 9px; font-weight: var(--weight-semibold); color: var(--ink);
   }
   .ps-status .indicators { display: inline-flex; gap: 4px; align-items: center; }
   .ps-status .indicators i { display: inline-block; width: 10px; height: 6px; border-radius: 1px; background: var(--ink); }
   .ps-header { padding: 14px 16px 8px; }
-  .ps-header h4 { font-size: 11px; color: var(--ink-mute); font-weight: 500; margin-bottom: 2px; letter-spacing: 0; }
-  .ps-header .big { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; }
-  .ps-header .up { color: #1f9c7a; font-size: 10px; font-weight: 600; margin-left: 6px; }
+  .ps-header h4 { font-size: 11px; color: var(--ink-mute); font-weight: var(--weight-medium); margin-bottom: 2px; letter-spacing: var(--track-normal); }
+  .ps-header .big { font-size: 22px; font-weight: var(--weight-extrabold); letter-spacing: var(--track-normal); }
+  .ps-header .up { color: #1f9c7a; font-size: 10px; font-weight: var(--weight-semibold); margin-left: 6px; }
   .ps-chart {
     margin: 8px 16px 0; height: 56px; border-radius: 12px;
     background: linear-gradient(180deg, rgba(47,107,255,0.12), rgba(47,107,255,0));
@@ -304,9 +364,9 @@
   .ps-row .thumb.c { background: linear-gradient(135deg, #b6f0d7, #2db58c); }
   .ps-row .thumb.d { background: linear-gradient(135deg, #ffd2dc, #ff7aa8); }
   .ps-row .meta { flex: 1; min-width: 0; }
-  .ps-row .meta b { display: block; font-size: 9px; font-weight: 700; color: var(--ink); line-height: 1.1; }
+  .ps-row .meta b { display: block; font-size: 9px; font-weight: var(--weight-bold); color: var(--ink); line-height: var(--lh-tight); }
   .ps-row .meta span { display: block; font-size: 8px; color: var(--ink-mute); }
-  .ps-row .price { font-size: 9px; font-weight: 700; color: var(--ink); }
+  .ps-row .price { font-size: 9px; font-weight: var(--weight-bold); color: var(--ink); }
 
   /* Phone screen 2 — product detail */
   .hero-appbar {
@@ -348,7 +408,7 @@
     background: #ff5c63;
     color: #fff;
     font-size: 8px;
-    font-weight: 700;
+    font-weight: var(--weight-bold);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -393,7 +453,7 @@
   .hero-menu-item .ic .ix { width: 18px; height: 18px; }
   .hero-menu-item b {
     font-size: 14px;
-    font-weight: 700;
+    font-weight: var(--weight-bold);
     color: #0f183c;
   }
   .hero-menu-item .right {
@@ -408,7 +468,7 @@
     background: #ffe9a8;
     color: #ff9c2c;
     font-size: 9px;
-    font-weight: 700;
+    font-weight: var(--weight-bold);
   }
   .hero-menu-item .arrow {
     font-size: 18px;
@@ -432,9 +492,9 @@
 
   /* Section */
   section { padding: 96px 0; }
-  .section-head { text-align: center; max-width: 720px; margin: 0 auto 56px; }
-  .section-head h2 { font-size: clamp(34px, 4vw, 52px); margin-top: 0; }
-  .section-head p { color: var(--ink-mute); font-size: 17px; margin-top: 14px; }
+	  .section-head { text-align: center; max-width: 720px; margin: 0 auto 56px; }
+	  .section-head h2 { font-size: var(--title-section); margin-top: 0; }
+	  .section-head p { color: var(--ink-mute); font-size: var(--text-lg); margin-top: 14px; line-height: var(--lh-body); }
 
   /* Beneficiaries */
   .benef-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
@@ -442,7 +502,7 @@
     border: 1px solid rgba(11,15,28,0.08);
     border-radius: 24px;
     padding: 0;
-    background: #fff;
+    background: var(--surface-card);
     transition: transform .25s, box-shadow .25s, border-color .25s;
     position: relative;
     overflow: hidden;
@@ -470,7 +530,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(5,10,24,0.04) 0%, rgba(5,10,24,0.08) 32%, rgba(5,10,24,0.52) 100%);
+    background: var(--gradient-media-scrim);
     z-index: 1;
     pointer-events: none;
   }
@@ -479,7 +539,7 @@
     position: absolute;
     inset: auto 0 0;
     height: 38%;
-    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(10,18,40,0.2) 28%, rgba(10,18,40,0.5) 100%);
+    background: var(--gradient-media-bottom);
     z-index: 1;
     pointer-events: none;
   }
@@ -492,96 +552,244 @@
     margin: 0;
     padding: 32px 18px 18px;
     border-radius: 0 0 24px 24px;
-    background: linear-gradient(180deg, rgba(10,15,28,0) 0%, rgba(10,15,28,0.88) 100%);
+    background: var(--gradient-media-caption);
   }
-  .benef-card h3 {
-    font-size: 18px;
-    margin-bottom: 6px;
-    letter-spacing: -0.02em;
-    color: #fff;
-  }
-  .benef-card p {
-    color: rgba(255,255,255,0.82);
-    font-size: 14px;
-    line-height: 1.5;
-  }
+	  .benef-card h3 {
+	    font-size: var(--text-xl);
+	    margin-bottom: 6px;
+	    letter-spacing: var(--track-tight);
+	    color: #fff;
+	  }
+	  .benef-card p {
+	    color: rgba(255,255,255,0.82);
+	    font-size: var(--text-sm);
+	    line-height: var(--lh-body);
+	  }
 
   /* Features */
   .features { background: transparent; border-radius: 32px; padding: 34px 0 64px; margin: 0; }
   .features-grid {
-    display: grid; grid-template-columns: repeat(8, minmax(0, 1fr));
-    grid-template-rows: auto auto auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: auto;
     gap: 20px;
   }
   .feat {
-    background: #fff; border: 1px solid var(--line);
+    background: var(--gradient-card); border: 1px solid var(--line);
     border-radius: var(--radius-md); padding: 28px;
     display: flex; flex-direction: column; gap: 16px;
-    overflow: hidden; position: relative;
+    overflow: hidden; position: relative; min-width: 0;
     transition: transform .25s, box-shadow .25s, border-color .25s;
   }
   .feat:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--line-2); }
-  .feat h3 { letter-spacing: -0.02em; }
+	  .feat h3 { letter-spacing: var(--track-tight); }
   .feat-tag {
     display: inline-flex; align-items: center; gap: 6px; align-self: flex-start;
     background: var(--bg-soft-2); color: var(--ink-mute);
     padding: 4px 10px; border-radius: 999px;
-    font-size: 12px; font-weight: 600;
+	    font-size: var(--text-xs); font-weight: var(--weight-semibold);
+	  }
+	  .feat h3 { font-size: var(--title-card); }
+	  .feat p { color: var(--ink-mute); font-size: var(--text-sm); line-height: var(--lh-body); }
+  .feat-kicker {
+    color: var(--brand-2);
+	    font-size: var(--text-xs);
+    font-weight: var(--weight-bold);
+    letter-spacing: var(--track-normal);
+    text-transform: uppercase;
   }
-  .feat h3 { font-size: 22px; }
-  .feat p { color: var(--ink-mute); font-size: 14px; }
   .feat-1,
+  .feat-2,
+  .feat-3,
   .feat-4 {
-    grid-column: 4 / span 5; grid-row: 1;
-    display: grid; grid-template-columns: 1.05fr 1.2fr;
-    padding: 0; gap: 0; align-items: stretch;
+    grid-column: auto;
+    grid-row: auto;
+    min-height: 440px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
-  .feat-2 { grid-column: 1 / span 3; grid-row: 1; }
-  .feat-3 { grid-column: 6 / span 3; grid-row: 2; }
-  .feat-4 { grid-column: 1 / span 5; grid-row: 2; }
   .feat-5 {
-    grid-column: 1 / -1; grid-row: 3;
+    grid-column: 1 / -1; grid-row: auto;
     display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 24px; align-items: center;
     padding: 38px 28px;
-    background: linear-gradient(180deg, #f5f7fb 0%, #edf1f7 100%);
+    background: var(--gradient-card-muted);
+    color: var(--ink);
+    border-color: var(--line);
+    box-shadow: 0 34px 70px -54px rgba(13,18,32,0.3);
   }
   .feat-5 > * { min-width: 0; }
   .feat-main {
-    padding: 28px;
-    display: flex; flex-direction: column; gap: 16px; justify-content: center;
+    padding: 0;
+    display: flex; flex-direction: column; gap: 16px; justify-content: flex-start;
   }
-  .feat-img {
-    flex: 1; min-height: 180px; border-radius: 14px;
-    background: linear-gradient(160deg, #f6f8ff 0%, #eef3ff 100%);
-    position: relative; overflow: hidden;
-    border: 1px solid var(--line);
-    padding: 18px;
+  .feat-placeholder {
+    flex: 1;
+    min-height: 168px;
+    border-radius: 16px;
+    border: 1px dashed rgba(47,107,255,0.28);
+    background: var(--gradient-placeholder);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8892aa;
+	    font-size: var(--text-xs);
+    font-weight: var(--weight-bold);
+    letter-spacing: var(--track-normal);
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
   }
-  .feat-img.large { min-height: 280px; margin: 0 -28px -28px; border-radius: 0 0 var(--radius-md) var(--radius-md); border-left: none; border-right: none; border-bottom: none; padding: 24px; }
-  .feat-1 .feat-img.large,
-  .feat-4 .feat-img.large {
-    min-height: 100%;
-    margin: 0;
-    border: none;
-    border-left: 1px solid var(--line);
-    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  .feat-placeholder::after {
+    content: "";
+    position: absolute;
+    inset: 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.78);
+    pointer-events: none;
   }
-  .feat-img.compact {
-    min-height: 160px;
+  .feat-1 .feat-placeholder,
+  .feat-2.sales-card .feat-placeholder {
+    min-height: 230px;
+    margin-top: auto;
+    border-radius: 16px;
+  }
+  .feat-3 .feat-placeholder,
+  .feat-4 .feat-placeholder {
+    min-height: 230px;
     margin-top: auto;
   }
+  .feat-4 .feat-main {
+    justify-content: flex-start;
+  }
   .feat-2.sales-card {
-    padding: 30px 30px 0;
-    min-height: 560px;
-    background: linear-gradient(180deg, #f6f8fe 0%, #eef3ff 100%);
+    background: var(--gradient-card);
   }
   .feat-2.sales-card h3 {
-    font-size: 24px;
+	    font-size: var(--title-card);
   }
   .feat-2.sales-card p {
-    font-size: 15px;
-    line-height: 1.6;
-    max-width: 580px;
+	    font-size: var(--text-sm);
+    line-height: var(--lh-body);
+    max-width: none;
+  }
+  .scan-placeholder-stage {
+    position: relative;
+    flex: 1;
+    min-height: 258px;
+    margin-top: auto;
+    border-radius: 20px;
+  }
+  .scan-image-placeholder {
+    position: absolute;
+    border-radius: 18px;
+    border: 1px dashed rgba(47,107,255,0.3);
+    background: var(--gradient-placeholder);
+    box-shadow: 0 22px 44px -30px rgba(13,18,32,0.36);
+    overflow: hidden;
+  }
+  .scan-image-placeholder::after {
+    content: "";
+    position: absolute;
+    inset: 16px;
+    border-radius: 13px;
+    border: 1px solid rgba(255,255,255,0.84);
+    pointer-events: none;
+  }
+  .scan-image-placeholder.primary {
+    left: 0;
+    bottom: 0;
+    width: 72%;
+    height: 54%;
+  }
+  .scan-image-placeholder.secondary {
+    right: 0;
+    top: 24px;
+    width: 48%;
+    height: 52%;
+    z-index: 2;
+    background: var(--gradient-placeholder);
+  }
+  .stats-placeholder-grid {
+    flex: 1;
+    min-height: 230px;
+    margin-top: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+  .stats-image-placeholder {
+    min-height: 0;
+    border-radius: 18px;
+    border: 1px dashed rgba(47,107,255,0.28);
+    background: var(--gradient-placeholder);
+    box-shadow: 0 18px 34px -28px rgba(13,18,32,0.28);
+    position: relative;
+    overflow: hidden;
+  }
+  .stats-image-placeholder::after {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.8);
+    pointer-events: none;
+  }
+  .stats-image-placeholder.accent {
+    border-color: rgba(13,18,32,0.12);
+    background: var(--gradient-placeholder-dark);
+    box-shadow: 0 24px 44px -28px rgba(13,18,32,0.5);
+  }
+  .inventory-placeholder-stack {
+    position: relative;
+    flex: 1;
+    min-height: 258px;
+    margin-top: auto;
+    border-radius: 22px;
+    overflow: hidden;
+  }
+  .inventory-image-placeholder {
+    position: absolute;
+    border-radius: 18px;
+    border: 1px dashed rgba(47,107,255,0.28);
+    background: var(--gradient-placeholder);
+    box-shadow: 0 22px 44px -30px rgba(13,18,32,0.36);
+    overflow: hidden;
+  }
+  .inventory-image-placeholder::after {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.82);
+    pointer-events: none;
+  }
+  .inventory-image-placeholder.back {
+    left: 10%;
+    bottom: 18%;
+    width: 72%;
+    height: 46%;
+    opacity: 0.56;
+    filter: blur(0.1px);
+  }
+  .inventory-image-placeholder.left {
+    left: 0;
+    bottom: 8%;
+    width: 50%;
+    height: 54%;
+    z-index: 2;
+    opacity: 0.82;
+  }
+  .inventory-image-placeholder.front {
+    right: 0;
+    top: 6%;
+    width: 58%;
+    height: 64%;
+    z-index: 0;
+    border-style: solid;
+    background: var(--gradient-placeholder);
+    box-shadow: 0 28px 54px -28px rgba(13,18,32,0.42);
   }
   .sales-stage {
     position: relative;
@@ -637,7 +845,7 @@
     background: #fff;
     color: #25304b;
     font-size: 11px;
-    font-weight: 600;
+    font-weight: var(--weight-semibold);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -677,7 +885,7 @@
   .sales-line-main b {
     font-size: 12px;
     color: var(--ink);
-    line-height: 1.25;
+    line-height: var(--lh-tight);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -707,7 +915,7 @@
     align-items: center;
     justify-content: center;
     font-style: normal;
-    font-weight: 700;
+    font-weight: var(--weight-bold);
     font-size: 16px;
   }
   .sales-stepper strong {
@@ -759,7 +967,7 @@
     gap: 8px;
     color: #2f3955;
     font-size: 11px;
-    font-weight: 600;
+    font-weight: var(--weight-semibold);
     margin-bottom: 12px;
   }
   .scan-again .ix {
@@ -797,7 +1005,7 @@
   .scan-mini .mini-price {
     margin-top: 6px;
     font-size: 11px;
-    font-weight: 800;
+    font-weight: var(--weight-extrabold);
     color: #08153d;
   }
   .sales-float.summary {
@@ -816,7 +1024,7 @@
     background: #f5f7fc;
     color: #24304d;
     font-size: 13px;
-    font-weight: 500;
+    font-weight: var(--weight-medium);
   }
   .summary-row + .summary-row {
     margin-top: 4px;
@@ -843,51 +1051,48 @@
 
   .feat-copy { max-width: 640px; }
   .feat-5 .feat-copy { max-width: none; width: 100%; }
-  .feat-5 .feat-copy h3 { font-size: 22px; margin-bottom: 2px; }
-  .feat-5 .feat-copy p { font-size: 14px; line-height: 1.55; }
+	  .feat-5 .feat-copy h3 { font-size: var(--title-card); margin-bottom: 2px; }
+	  .feat-5 .feat-copy p { font-size: var(--text-sm); line-height: var(--lh-body); color: var(--ink-mute); }
   .url-mock {
     border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px;
-    background: var(--bg-soft); font-size: 13px; color: var(--ink-mute);
+	    background: var(--bg-soft); font-size: var(--text-xs); color: var(--ink-mute);
     display: flex; align-items: center; gap: 8px;
   }
   .url-mock.domain {
     min-height: 76px;
     width: 100%;
     padding: 0 22px;
-    border: none;
+    border: 1px solid rgba(180,190,210,0.7);
     border-radius: 22px;
-    background: #fff;
-    box-shadow: inset 0 0 0 1px rgba(13,18,32,0.05);
-    font-size: clamp(20px, 1.9vw, 24px);
-    color: #7a8296;
+    background: rgba(255,255,255,0.72);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.86), 0 20px 44px -34px rgba(13,18,32,0.22);
+	    font-size: var(--title-card);
+    color: var(--ink);
     justify-content: flex-start;
     align-items: center;
     justify-self: stretch;
   }
   .url-lock {
-    width: 28px; height: 28px; flex-shrink: 0; color: #9aa1af;
+    width: 28px; height: 28px; flex-shrink: 0; color: var(--brand);
   }
   .url-text {
     min-width: 0;
     display: inline-flex; align-items: center; flex-wrap: wrap;
     gap: 0;
-    font-weight: 700;
-    line-height: 1.1;
+	    font-weight: var(--weight-bold);
+    line-height: var(--lh-tight);
     justify-content: flex-start;
     text-align: left;
   }
-  .url-prefix { color: #26304b; font-weight: 600; }
+  .url-prefix { color: var(--ink-mute); font-weight: var(--weight-semibold); }
   .url-value { color: var(--ink); }
   .url-mock .caret { width: 1px; height: 14px; background: var(--brand); animation: blink 1s infinite; }
-  .url-mock.domain .caret { width: 2px; height: 36px; background: #8d94a6; }
+  .url-mock.domain .caret { width: 2px; height: 36px; background: var(--brand); }
   @keyframes blink { 50% { opacity: 0; } }
 
   /* All-in-one banner */
   .banner {
-    background:
-      radial-gradient(800px 400px at 100% 0%, rgba(110,148,255,0.4), transparent 60%),
-      radial-gradient(600px 400px at 0% 100%, rgba(47,107,255,0.35), transparent 60%),
-      linear-gradient(135deg, #0a0e1e 0%, #142049 60%, #1c2c5e 100%);
+    background: var(--gradient-banner);
     color: #fff; border-radius: 28px;
     padding: 64px 56px;
     display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center;
@@ -905,13 +1110,13 @@
     display: inline-flex; align-items: center; gap: 8px;
     padding: 5px 12px; border-radius: 999px;
     background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
-    font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.85); margin-bottom: 18px;
+	    font-size: var(--text-xs); font-weight: var(--weight-semibold); color: rgba(255,255,255,0.85); margin-bottom: 18px;
   }
   .banner-head .eyebrow i { width: 6px; height: 6px; border-radius: 50%; background: #4ad9b1; display: inline-block; box-shadow: 0 0 8px #4ad9b1; }
   .banner h2 {
-    font-size: clamp(28px, 3vw, 42px);
+	    font-size: var(--title-banner);
     position: relative;
-    letter-spacing: -0.025em;
+	    letter-spacing: var(--track-tight);
   }
   .banner h2.scroll-fill {
     color: rgba(255,255,255,0.2);
@@ -927,22 +1132,28 @@
     pointer-events: none;
   }
   .banner-head { max-width: none; width: 100%; text-align: center; }
-  .banner-sub { color: rgba(255,255,255,0.7); font-size: 16px; margin-top: 14px; max-width: none; width: 100%; text-align: center; }
+	  .banner-sub { color: rgba(255,255,255,0.7); font-size: var(--text-lg); margin-top: 14px; max-width: none; width: 100%; text-align: center; line-height: var(--lh-body); }
 
   /* Side feature blocks */
   .side-feat { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
   .side-feat.reverse > :first-child { order: 2; }
-  .side-feat h2 { font-size: clamp(32px, 3.5vw, 44px); margin-bottom: 28px; }
+	  .side-feat h2 { font-size: var(--title-subsection); margin-bottom: 28px; }
+  .side-lead {
+    color: var(--ink-mute);
+    font-size: var(--text-lg);
+    line-height: var(--lh-body);
+    margin-bottom: 28px;
+  }
   .feat-list { display: flex; flex-direction: column; gap: 2px; }
   .side-feat.reverse .feat-list { gap: 2px; }
   .feat-item {
     display: flex; align-items: center; gap: 14px;
     padding: 14px 18px; background: #fff; border-radius: 14px;
     border: 1px solid transparent;
-    font-weight: 500; font-size: 15px;
+	    font-weight: var(--weight-medium); font-size: var(--text-base);
     transition: background .2s, transform .2s, border-color .2s, box-shadow .2s;
   }
-  .feat-item:hover { background: var(--bg-soft); transform: translateX(2px); border-color: transparent; box-shadow: var(--shadow-sm); }
+.feat-item:hover { background: var(--bg-soft); border-color: transparent; box-shadow: var(--shadow-sm); }
   .feat-icon {
     width: 40px; height: 40px; flex-shrink: 0; border-radius: 12px;
     background: linear-gradient(180deg, #eff4ff 0%, #dfe9ff 100%);
@@ -954,7 +1165,7 @@
   .feat-icon .ix-solid { width: 20px; height: 20px; }
   .side-img {
     aspect-ratio: 4/5; border-radius: 24px;
-    background: radial-gradient(120% 100% at 50% 0%, rgba(47,107,255,0.16), transparent 60%), linear-gradient(180deg, #f6f8ff 0%, #eef3ff 100%);
+    background: var(--gradient-card-muted);
     border: 1px solid var(--line);
     display: flex; align-items: center; justify-content: center;
     position: relative; overflow: hidden;
@@ -976,11 +1187,69 @@
     background: linear-gradient(180deg, #f7f9ff 0%, #ffffff 60%);
     overflow: hidden;
   }
+  .side-phone-shot {
+    display: block;
+    width: 62%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 30px 50px rgba(13,18,32,0.28));
+  }
+  .side-product-row {
+    position: absolute;
+    top: 8%;
+    left: 4%;
+    width: min(68%, 370px);
+    height: auto;
+    z-index: 0;
+    display: block;
+    filter: drop-shadow(0 14px 30px rgba(13,18,32,0.14));
+  }
+  .side-property-button {
+    position: absolute;
+    right: 4%;
+    bottom: 10%;
+    width: min(52%, 280px);
+    height: auto;
+    z-index: 4;
+    display: block;
+    filter: drop-shadow(0 14px 30px rgba(13,18,32,0.14));
+  }
+  .side-scan-card {
+    position: absolute;
+    top: 8%;
+    left: 4%;
+    width: min(46%, 260px);
+    height: auto;
+    z-index: 0;
+    display: block;
+    filter: drop-shadow(0 14px 30px rgba(13,18,32,0.14));
+  }
+  .side-sold-products-card {
+    position: absolute;
+    top: 8%;
+    left: 4%;
+    width: min(56%, 320px);
+    height: auto;
+    z-index: 0;
+    display: block;
+    filter: drop-shadow(0 14px 30px rgba(13,18,32,0.14));
+  }
+  .side-scan-card-br {
+    position: absolute;
+    right: 4%;
+    bottom: 10%;
+    width: min(46%, 260px);
+    height: auto;
+    z-index: 4;
+    display: block;
+    filter: drop-shadow(0 14px 30px rgba(13,18,32,0.14));
+  }
   .side-bubble {
     position: absolute;
     background: #fff; border: 1px solid var(--line); border-radius: 14px;
     padding: 10px 12px; box-shadow: 0 14px 30px -14px rgba(13,18,32,0.22);
-    display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 700;
+	    display: flex; align-items: center; gap: 10px; font-size: var(--text-xs); font-weight: var(--weight-bold);
   }
   .side-bubble .ico {
     width: 30px; height: 30px; border-radius: 10px;
@@ -989,17 +1258,17 @@
   }
   .side-bubble .ico .ix,
   .side-bubble .ico .ix-solid { width: 15px; height: 15px; }
-  .side-bubble .meta b { display: block; font-size: 12px; }
-  .side-bubble .meta span { font-size: 10px; color: var(--ink-mute); font-weight: 500; }
+	  .side-bubble .meta b { display: block; font-size: var(--text-xs); }
+	  .side-bubble .meta span { font-size: 10px; color: var(--ink-mute); font-weight: var(--weight-medium); }
   .side-bubble.tl { top: 8%; left: 4%; }
-  .side-bubble.br { bottom: 10%; right: 4%; }
+  .side-bubble.br { bottom: 10%; right: 4%; z-index: 4; }
 
   /* Coming soon chips */
   .chips { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; max-width: 820px; margin: 0 auto; }
   .chip {
     display: inline-flex; align-items: center; gap: 10px;
     padding: 12px 20px 12px 12px; border: 1px solid var(--line); border-radius: 999px;
-    background: #fff; font-weight: 600; font-size: 15px; color: var(--ink-2);
+	    background: #fff; font-weight: var(--weight-semibold); font-size: var(--text-base); color: var(--ink-2);
     transition: transform .2s, border-color .2s, box-shadow .2s;
     box-shadow: var(--shadow-sm);
   }
@@ -1012,55 +1281,291 @@
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.85);
   }
   .chip-ic.ix { width: 17px; height: 17px; color: var(--brand-2); }
-  .chips-foot { text-align: center; margin-top: 32px; color: var(--ink-mute); font-size: 16px; font-style: italic; }
+	  .chips-foot { text-align: center; margin-top: 32px; color: var(--ink-mute); font-size: var(--text-md); font-style: italic; }
 
   /* Testimonials */
-  .testi-row { display: flex; gap: 20px; padding: 8px 0; overflow-x: auto; scroll-snap-type: none; scrollbar-width: none; position: relative; }
-  .testi-row::-webkit-scrollbar { display: none; }
-  .testi-row::before,
-  .testi-row::after {
-    content: "";
-    position: sticky;
-    top: 0;
-    width: 72px;
-    flex: 0 0 72px;
-    align-self: stretch;
-    z-index: 2;
-    pointer-events: none;
+  .testimonials-section {
+    background: var(--gradient-card-muted);
+    color: var(--ink);
+    overflow: visible;
   }
-  .testi-row::before {
-    left: 0;
-    margin-right: -72px;
-    background: linear-gradient(90deg, var(--bg-soft) 0%, rgba(245,246,248,0) 100%);
+  .testimonials-section .section-head h2 {
+    color: var(--ink);
   }
-  .testi-row::after {
-    right: 0;
-    margin-left: -72px;
-    background: linear-gradient(270deg, var(--bg-soft) 0%, rgba(245,246,248,0) 100%);
+  .testimonials-section .section-head p {
+    color: var(--ink-mute);
+  }
+  .testi-row {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    padding: 8px 0;
+    overflow: visible;
+    position: relative;
   }
   .testi {
-    flex: 0 0 380px; scroll-snap-align: start;
+    min-width: 0;
     padding: 28px; border: 1px solid var(--line); border-radius: 20px;
-    background: #fff; display: flex; flex-direction: column; gap: 20px;
+    background: rgba(255,255,255,0.86); display: flex; flex-direction: column; gap: 20px;
+    box-shadow: 0 22px 50px -38px rgba(13,18,32,0.22), inset 0 1px 0 rgba(255,255,255,0.9);
+    backdrop-filter: blur(8px);
   }
-  .testi p { color: var(--ink-2); font-size: 15px; line-height: 1.6; }
+	  .testi p { color: var(--ink-2); font-size: var(--text-base); line-height: var(--lh-body); }
   .testi-person { display: flex; align-items: center; gap: 12px; margin-top: auto; }
   .avatar {
     width: 44px; height: 44px; border-radius: 50%;
     background: linear-gradient(135deg, #c5cee0, #8a98b3);
     display: flex; align-items: center; justify-content: center;
-    color: #fff; font-weight: 700; font-size: 14px;
+	    color: #fff; font-weight: var(--weight-bold); font-size: var(--text-sm);
+    overflow: hidden; flex-shrink: 0;
   }
-  .testi-person h4 { font-size: 15px; }
-  .testi-person small { color: var(--ink-mute); font-size: 13px; font-weight: 500; }
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+	  .testi-person h4 { font-size: var(--text-base); color: var(--ink); }
+	  .testi-person small { color: var(--ink-mute); font-size: var(--text-xs); font-weight: var(--weight-medium); }
 
+  /* Pricing */
+  .pricing-section {
+    background: #fff;
+  }
+  .pricing-section .section-head {
+    margin-bottom: 22px;
+  }
+  .billing-switch {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 38px;
+  }
+  .billing-tabs {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(255,255,255,0.86);
+    box-shadow: 0 14px 34px -24px rgba(13,18,32,0.28), inset 0 1px 0 rgba(255,255,255,0.88);
+  }
+  .billing-tab {
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 16px;
+    border-radius: 999px;
+    color: var(--ink-mute);
+	    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    transition: background .18s ease, color .18s ease, box-shadow .18s ease;
+  }
+  .billing-tab.is-active {
+    background: var(--surface-dark);
+    color: #fff;
+    box-shadow: 0 10px 24px -14px rgba(13,18,32,0.6);
+  }
+  .billing-discount {
+    display: inline-flex;
+    align-items: center;
+    min-height: 22px;
+    padding: 0 8px;
+    border-radius: 999px;
+	    background: #fee2e2;
+	    color: #dc2626;
+	    font-size: var(--text-xs);
+    font-weight: var(--weight-extrabold);
+  }
+  .billing-tab.is-active .billing-discount {
+	    background: #fee2e2;
+	    color: #dc2626;
+  }
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    align-items: stretch;
+  }
+  .pricing-card {
+    min-width: 0;
+    min-height: 470px;
+    padding: 26px;
+    border: 1px solid rgba(13,18,32,0.08);
+    border-radius: 24px;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(248,250,255,0.95) 100%);
+    box-shadow: 0 24px 54px -38px rgba(13,18,32,0.28), inset 0 1px 0 rgba(255,255,255,0.86);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    position: relative;
+    overflow: hidden;
+    transition: transform .25s, box-shadow .25s, border-color .25s, background .25s;
+  }
+  .pricing-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(47,107,255,0.2);
+    box-shadow: 0 30px 64px -38px rgba(13,18,32,0.34), inset 0 1px 0 rgba(255,255,255,0.92);
+  }
+  .pricing-card.featured {
+    border-color: rgba(47,107,255,0.42);
+    background:
+      radial-gradient(420px 260px at 50% 0%, rgba(47,107,255,0.16), transparent 72%),
+      linear-gradient(180deg, #ffffff 0%, #eef4ff 100%);
+    box-shadow: 0 32px 72px -38px rgba(47,107,255,0.48), inset 0 1px 0 rgba(255,255,255,0.9);
+  }
+  .pricing-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+  }
+  .pricing-head h3 {
+	    font-size: var(--title-panel);
+	    letter-spacing: var(--track-tight);
+  }
+  .pricing-desc {
+    min-height: 44px;
+    color: var(--ink-mute);
+	    font-size: var(--text-sm);
+    line-height: var(--lh-body);
+  }
+  .pricing-pill {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: var(--brand-soft);
+    color: var(--brand-2);
+	    font-size: var(--text-xs);
+    font-weight: var(--weight-bold);
+  }
+  .price-stack {
+    border: 0;
+    border-top: 1px solid rgba(13,18,32,0.08);
+    border-bottom: 1px solid rgba(13,18,32,0.08);
+    border-radius: 0;
+    padding: 18px 0 17px;
+    background: transparent;
+    box-shadow: none;
+  }
+  .price-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .price-period {
+    display: inline-flex;
+    align-items: center;
+    min-height: auto;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    color: var(--ink-mute);
+	    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+  }
+  .price-value {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 6px;
+    text-align: right;
+  }
+  .price-value strong {
+    color: var(--ink);
+	    font-size: var(--title-price);
+    line-height: 0.98;
+	    letter-spacing: var(--track-tight);
+  }
+  .price-value small {
+    color: var(--ink-mute);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    line-height: 1.2;
+    padding-bottom: 3px;
+  }
+  .price-note {
+    margin-top: 10px;
+    color: var(--ink-mute);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+  }
+  .pricing-card.featured .price-stack {
+    border-color: rgba(47,107,255,0.18);
+    background: transparent;
+  }
+  .pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 2px;
+  }
+  .pricing-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--ink-2);
+	    font-size: var(--text-base);
+    line-height: var(--lh-body);
+  }
+  .pricing-check {
+    width: 18px;
+    height: 18px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 18px;
+    margin-top: 2px;
+    color: var(--brand);
+  }
+  .pricing-check .ix {
+    width: 18px;
+    height: 18px;
+  }
+  .pricing-action {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 46px;
+    border-radius: 16px;
+    background: var(--surface-dark);
+    color: #fff;
+	    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    transition: transform .15s ease, background .2s, box-shadow .2s;
+  }
+  .pricing-action:hover {
+    transform: translateY(-1px);
+    background: #16213a;
+    box-shadow: 0 14px 28px -12px rgba(13,18,32,0.48);
+  }
+  .pricing-card.featured .pricing-action {
+    background: var(--brand);
+    box-shadow: 0 18px 34px -18px rgba(47,107,255,0.6);
+  }
+  .pricing-card.featured .pricing-action:hover {
+    background: var(--brand-2);
+  }
+  .pricing-action.disabled {
+    background: #e4e9f3;
+    color: #778096;
+    pointer-events: none;
+  }
   /* FAQ */
   .faq { max-width: 820px; margin: 0 auto; }
   .faq-item { border-bottom: 1px solid var(--line); }
   .faq-q {
     width: 100%; text-align: left; padding: 22px 0;
     display: flex; align-items: center; justify-content: space-between; gap: 16px;
-    font-weight: 600; font-size: 18px; color: var(--ink);
+	    font-weight: var(--weight-semibold); font-size: var(--text-xl); color: var(--ink);
   }
   .faq-q .plus {
     position: relative;
@@ -1097,7 +1602,7 @@
   .faq-a {
     max-height: 0; overflow: hidden;
     transition: max-height .3s ease, padding .3s ease;
-    color: var(--ink-mute); font-size: 15px; line-height: 1.6;
+	    color: var(--ink-mute); font-size: var(--text-base); line-height: var(--lh-body);
   }
   .faq-item.open .faq-a { max-height: 320px; padding: 0 0 22px; }
 
@@ -1108,10 +1613,7 @@
     margin: 0 auto;
     padding: 44px 36px 20px;
     border-radius: 36px;
-    background:
-      radial-gradient(circle at 50% 18%, rgba(47,107,255,0.28), transparent 30%),
-      radial-gradient(circle at top right, rgba(47,107,255,0.26), transparent 28%),
-      linear-gradient(135deg, #0b1120 0%, #101b37 100%);
+    background: var(--gradient-footer-shell);
     color: #fff;
     border: 1px solid rgba(255,255,255,0.08);
     box-shadow: 0 28px 60px -36px rgba(11,17,32,0.75);
@@ -1121,14 +1623,14 @@
     padding: 4px 0 38px;
   }
   .footer-hero h2 {
-    font-size: clamp(34px, 4.4vw, 56px);
-    line-height: 1.02;
+	    font-size: var(--title-footer);
+    line-height: var(--lh-tight);
     max-width: 700px;
     margin: 0 auto 12px;
   }
   .footer-hero p {
     color: rgba(255,255,255,0.72);
-    font-size: 16px;
+	    font-size: var(--text-lg);
     margin-bottom: 24px;
   }
   .footer-hero .stores {
@@ -1157,8 +1659,8 @@
   .foot-brand .logo img { width: 138px; }
   .foot-brand p {
     color: rgba(255,255,255,0.68);
-    font-size: 14px;
-    line-height: 1.55;
+	    font-size: var(--text-sm);
+    line-height: var(--lh-body);
   }
   .foot-links {
     display: flex;
@@ -1169,7 +1671,7 @@
   }
   .foot-links a {
     color: rgba(255,255,255,0.72);
-    font-size: 14px;
+	    font-size: var(--text-sm);
     padding: 0;
     border-radius: 0;
     border: none;
@@ -1203,7 +1705,7 @@
   }
   .social .ix { width: 18px; height: 18px; }
   .copy {
-    font-size: 13px;
+	    font-size: var(--text-xs);
     color: rgba(255,255,255,0.55);
     padding-top: 16px;
     margin-top: 18px;
@@ -1217,9 +1719,8 @@
   .endcap {
     position: relative;
     overflow: hidden;
-    background: #07163f;
+    background: var(--surface-footer);
     color: #fff;
-    border-top: 1px solid rgba(255,255,255,0.06);
     min-height: 880px;
   }
   .endcap-grid {
@@ -1231,11 +1732,9 @@
   }
   .endcap-col {
     padding: 42px 34px 120px;
-    border-left: 1px solid rgba(255,255,255,0.08);
     min-height: 420px;
   }
-  .endcap-col:first-child { border-left: none; }
-  .endcap-brand img {
+  .endcap-brand > img {
     width: 140px;
     height: auto;
     margin-bottom: 22px;
@@ -1243,15 +1742,26 @@
   .endcap-brand p {
     max-width: 260px;
     color: rgba(255,255,255,0.68);
-    font-size: 15px;
-    line-height: 1.7;
+	    font-size: var(--text-base);
+    line-height: var(--lh-body);
+  }
+  .endcap-brand .footer-stores {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
+  }
+  .endcap-brand .store-badge img {
+    width: auto;
+    height: 46px;
+    margin: 0;
   }
   .endcap-title {
     color: rgba(255,255,255,0.42);
-    font-size: 14px;
-    font-weight: 600;
+	    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
     margin-bottom: 20px;
-    letter-spacing: 0.01em;
+    letter-spacing: var(--track-normal);
   }
   .endcap-links,
   .endcap-support {
@@ -1263,8 +1773,8 @@
   .endcap-support a,
   .endcap-support span {
     color: rgba(255,255,255,0.82);
-    font-size: 18px;
-    line-height: 1.45;
+	    font-size: var(--text-lg);
+    line-height: var(--lh-body);
     transition: color .2s ease, opacity .2s ease;
   }
   .endcap-links a:hover,
@@ -1278,14 +1788,13 @@
     gap: 24px;
     padding: 26px 0 0;
     margin-top: -24px;
-    border-top: 1px solid rgba(255,255,255,0.08);
   }
   .endcap-meta {
     display: flex;
     flex-wrap: wrap;
     gap: 18px 28px;
     color: rgba(255,255,255,0.62);
-    font-size: 14px;
+	    font-size: var(--text-sm);
   }
   .endcap-meta a { color: rgba(255,255,255,0.78); }
   .endcap-socials {
@@ -1320,7 +1829,7 @@
     bottom: 6px;
     transform: translateX(-50%);
     width: min(860px, 64vw);
-    opacity: 0.14;
+    opacity: 0.22;
     pointer-events: none;
     user-select: none;
     mask-image: linear-gradient(to top, rgba(255,255,255,0.85), rgba(255,255,255,0.1) 55%, transparent 100%);
@@ -1332,17 +1841,41 @@
     height: auto;
   }
 
+  @media (max-width: 1100px) {
+    .testi-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
   @media (max-width: 900px) {
     .hero-grid, .side-feat, .banner, .features-grid { grid-template-columns: 1fr !important; }
+    .features-grid { grid-auto-rows: auto; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .testi-row { grid-template-columns: 1fr; }
+    .pricing-card {
+      min-height: 0;
+      padding: 24px 22px;
+    }
     .side-feat.reverse > :first-child { order: 0; }
     .benef-grid { grid-template-columns: repeat(2, 1fr); }
-    .feat-1, .feat-2, .feat-3, .feat-4 { grid-column: 1 !important; grid-row: auto !important; }
-    .feat-1 { grid-template-columns: 1fr !important; }
+    .feat-1, .feat-2, .feat-3, .feat-4 {
+      grid-column: 1 !important;
+      grid-row: auto !important;
+      min-height: 0;
+      padding: 24px 22px;
+    }
     .feat-5 { grid-column: 1 !important; grid-row: auto !important; grid-template-columns: 1fr !important; padding: 34px 22px; }
-    .feat-4 { grid-template-columns: 1fr !important; }
-    .feat-2.sales-card {
-      min-height: auto;
-      padding: 28px 22px 22px;
+    .feat-1 .feat-placeholder,
+    .feat-2.sales-card .feat-placeholder,
+    .feat-3 .feat-placeholder,
+    .feat-4 .feat-placeholder {
+      min-height: 220px;
+      border: 1px dashed rgba(47,107,255,0.28);
+      border-radius: 16px;
+    }
+    .stats-placeholder-grid {
+      min-height: 220px;
+    }
+    .inventory-placeholder-stack {
+      min-height: 240px;
     }
     .sales-stage {
       min-height: 0;
@@ -1367,19 +1900,7 @@
     }
     .sales-float.scan { order: 1; }
     .sales-float.summary { order: 3; }
-    .feat-1 .feat-img.large {
-      min-height: 220px;
-      border-left: none;
-      border-top: 1px solid var(--line);
-      border-radius: 0 0 var(--radius-md) var(--radius-md);
-    }
-    .feat-4 .feat-img.large {
-      min-height: 220px;
-      border-left: none;
-      border-top: 1px solid var(--line);
-      border-radius: 0 0 var(--radius-md) var(--radius-md);
-    }
-    .feat-5 .url-mock.domain { min-height: 70px; padding: 0 18px; font-size: 18px; }
+	    .feat-5 .url-mock.domain { min-height: 70px; padding: 0 18px; font-size: var(--text-xl); }
     .url-mock.domain .caret { height: 24px; }
     .nav-links { display: none; }
     .nav-actions { display: none; }
@@ -1404,7 +1925,7 @@
     }
     .foot-shell { padding: 34px 22px 20px; }
     .footer-hero { padding: 0 0 30px; }
-    .footer-hero h2 { font-size: 42px; }
+	    .footer-hero h2 { font-size: var(--title-footer-mobile); }
     .foot-grid { grid-template-columns: 1fr; }
     .foot-side { align-items: flex-start; flex-direction: column; gap: 16px; }
     .foot-links { justify-content: flex-start; }
@@ -1418,12 +1939,10 @@
       min-height: 0;
       padding: 28px 22px;
       border-left: none;
-      border-top: 1px solid rgba(255,255,255,0.08);
     }
-    .endcap-col:first-child { border-top: none; }
     .endcap-links a,
     .endcap-support a,
-    .endcap-support span { font-size: 17px; }
+	    .endcap-support span { font-size: var(--text-lg); }
     .endcap-bottom {
       flex-direction: column;
       align-items: flex-start;
@@ -1444,8 +1963,8 @@
   <div class="wrap nav-inner">
     <a href="/" class="logo" aria-label="Sooda home"><img src="/logo-white.svg" alt="Sooda" /></a>
     <nav class="nav-links">
-      <a href="/#faq">Help</a>
-      <a href="mailto:hello@sooda.app">Contact us</a>
+      <a href="/help.html">Help</a>
+      <a href="/contact.html">Contact us</a>
     </nav>
   </div>
 </header>
@@ -1459,13 +1978,11 @@
       <h1>Manage Inventory and Sales with ease</h1>
       <p class="lead">Join our early adopter waitlist, for priority access</p>
       <div class="hero-stores">
-        <a href="#download" class="btn-store light">
-          <span class="store-ic"><svg class="ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-mobile"></use></svg></span>
-          <div><small style="color:#5a6173">Download on</small><strong>App Store</strong></div>
+        <a href="#download" class="store-badge" aria-label="Download on the App Store">
+          <img src="/app-store.svg" alt="Download on the App Store" />
         </a>
-        <a href="#download" class="btn-store light">
-          <span class="store-ic"><svg class="ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-play"></use></svg></span>
-          <div><small style="color:#5a6173">Get it on</small><strong>Google Play</strong></div>
+        <a href="#download" class="store-badge" aria-label="Get it on Google Play">
+          <img src="/google-play.svg" alt="Get it on Google Play" />
         </a>
       </div>
     </div>
@@ -1536,82 +2053,44 @@
       </div>
       <div class="features-grid">
         <div class="feat feat-2 sales-card">
-          <h3>Sales Management</h3>
-          <p>Track your sales effortlessly and stay updated on performance in real time. Monitor and analyze your sales data to boost business growth</p>
-          <div class="sales-stage">
-            <div class="sales-float scan">
-              <h4>Scan Product</h4>
-              <div class="scan-again">
-                <svg class="ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-scan"></use></svg>
-                <span>Scan Again</span>
-              </div>
-              <div class="scan-mini">
-                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=400&q=80" alt="Scanned product preview" />
-                <div>
-                  <b>TDOO 20x50 Binoculars for Adult Hobbies...</b>
-                  <span>23 in stock · Tax: 5% · <em style="color:#ff5d66;font-style:normal;">Discount: -20%</em></span>
-                  <div class="mini-price">USD18.4</div>
-                </div>
-              </div>
-            </div>
-            <div class="sales-phone">
-              <div class="screen">
-                <div class="sales-topbar">
-                  <div class="sales-action">
-                    <svg class="ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-search"></use></svg>
-                    <span>Search Product</span>
-                  </div>
-                  <div class="sales-action">
-                    <svg class="ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-scan"></use></svg>
-                    <span>Scan Barcode</span>
-                  </div>
-                </div>
-                <div class="sales-line">
-                  <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=400&q=80" alt="Product" />
-                  <div class="sales-line-main">
-                    <b>TDOO 20x50 Binoculars for Adult Hobbies...</b>
-                    <span class="sales-line-meta">23 in stock &nbsp;&nbsp; Tax: 5% &nbsp;&nbsp; <em>Discount: -20%</em></span>
-                    <div class="sales-stepper"><i>-</i><strong>1</strong><i>+</i></div>
-                  </div>
-                  <div class="sales-price"><s>USD23.00</s><b>USD18.4</b></div>
-                </div>
-                <div class="sales-line">
-                  <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=400&q=80" alt="Product" />
-                  <div class="sales-line-main">
-                    <b>High Power Binoculars, 10x25 HD Clear H...</b>
-                    <span class="sales-line-meta">Tax: 5%</span>
-                    <div class="sales-stepper"><i>-</i><strong>1</strong><i>+</i></div>
-                  </div>
-                  <div class="sales-price"><b>USD23.00</b></div>
-                </div>
-              </div>
-            </div>
-            <div class="sales-float summary">
-              <div class="summary-row"><span>Sold today</span><strong>8</strong></div>
-              <div class="summary-row"><span>Total</span><b>USD143.00</b></div>
-              <div class="summary-row"><span>Cash</span><b>USD100.00</b></div>
-              <div class="summary-row"><span>Bank transfer</span><b>USD43.00</b></div>
-            </div>
+          <span class="feat-kicker">Point of sale</span>
+          <h3>Scan & sell faster</h3>
+          <p>Put the mobile selling flow in the largest block so the most important product moment gets the most room.</p>
+          <div class="scan-placeholder-stage" aria-label="Scan and sell screenshots placeholder layout">
+            <div class="scan-image-placeholder primary" aria-label="Primary scan and sell image placeholder"></div>
+            <div class="scan-image-placeholder secondary" aria-label="Secondary scan and sell image placeholder"></div>
           </div>
         </div>
         <div class="feat feat-1">
           <div class="feat-main">
+            <span class="feat-kicker">Sales dashboard</span>
             <h3>Sales Management</h3>
             <p>Track your sales effortlessly and stay updated on performance in real time. Monitor and analyze your sales data to boost business growth.</p>
           </div>
-          <div class="feat-img large">sales dashboard screenshot</div>
+          <div class="feat-placeholder" aria-label="Sales dashboard image placeholder"></div>
         </div>
         <div class="feat feat-4">
           <div class="feat-main">
+            <span class="feat-kicker">Inventory</span>
             <h3>Products Inventory</h3>
             <p>Stay organized with real‑time updates on your inventory levels. A comprehensive solution for managing your products inventory.</p>
           </div>
-          <div class="feat-img large">inventory list screenshot</div>
+          <div class="inventory-placeholder-stack" aria-label="Products inventory screenshots placeholder layout">
+            <div class="inventory-image-placeholder back" aria-label="Background inventory image placeholder"></div>
+            <div class="inventory-image-placeholder left" aria-label="Side inventory image placeholder"></div>
+            <div class="inventory-image-placeholder front" aria-label="Main inventory image placeholder"></div>
+          </div>
         </div>
         <div class="feat feat-3">
+          <span class="feat-kicker">Insights</span>
           <h3>Statistics</h3>
           <p>Powerful analytics and stats are on their way.</p>
-          <div class="feat-img compact">analytics preview</div>
+          <div class="stats-placeholder-grid" aria-label="Statistics screenshots placeholder layout">
+            <div class="stats-image-placeholder" aria-label="Statistics image placeholder 1"></div>
+            <div class="stats-image-placeholder accent" aria-label="Statistics image placeholder 2"></div>
+            <div class="stats-image-placeholder" aria-label="Statistics image placeholder 3"></div>
+            <div class="stats-image-placeholder" aria-label="Statistics image placeholder 4"></div>
+          </div>
         </div>
         <div class="feat feat-5">
           <div class="feat-copy">
@@ -1619,7 +2098,7 @@
             <p>Create your website in just one minute without any coding skills, and let your customers request information about your products.</p>
           </div>
           <div class="url-mock domain" aria-label="Custom domain preview">
-            <svg class="ix url-lock" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-lock"></use></svg>
+            <svg class="ix url-lock" viewBox="0 0 24 24" aria-hidden="true"><use href="/heroicons.svg#hero-lock-closed"></use></svg>
             <div class="url-text">
               <span class="url-prefix">https://sooda.store/</span><span class="url-value" data-typing></span><span class="caret"></span>
             </div>
@@ -1647,39 +2126,19 @@
   <div class="wrap side-feat">
     <div>
       <h2>Products Inventory</h2>
-      <p style="color:var(--ink-mute); font-size:17px; margin-bottom:28px">Keep your product inventory organized and up‑to‑date.</p>
+      <p class="side-lead">Keep your product inventory organized and up‑to‑date.</p>
       <div class="feat-list">
-        <div class="feat-item"><span class="feat-icon"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-solid-box"></use></svg></span> Inventory management</div>
-        <div class="feat-item"><span class="feat-icon"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-solid-add"></use></svg></span> Control quantities</div>
-        <div class="feat-item"><span class="feat-icon"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-solid-barcode"></use></svg></span> Generate or scan barcodes to add</div>
-        <div class="feat-item"><span class="feat-icon"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-solid-money"></use></svg></span> Wholesale prices, taxes, and minimum selling prices</div>
-        <div class="feat-item"><span class="feat-icon"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-solid-add"></use></svg></span> And add many more product properties</div>
+        <div class="feat-item"><span class="feat-icon"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/heroicons.svg#hero-cube"></use></svg></span> Inventory management</div>
+        <div class="feat-item"><span class="feat-icon"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/heroicons.svg#hero-adjustments-horizontal"></use></svg></span> Control quantities</div>
+        <div class="feat-item"><span class="feat-icon"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/heroicons.svg#hero-qr-code"></use></svg></span> Generate or scan barcodes to add</div>
+        <div class="feat-item"><span class="feat-icon"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/heroicons.svg#hero-currency-dollar"></use></svg></span> Wholesale prices, taxes, and minimum selling prices</div>
+        <div class="feat-item"><span class="feat-icon"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/heroicons.svg#hero-plus"></use></svg></span> And add many more product properties</div>
       </div>
     </div>
     <div class="side-img">
-      <div class="side-bubble tl">
-        <span class="ico" style="background: linear-gradient(135deg, #4ad9b1, #1f9c7a)"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-solid-document"></use></svg></span>
-        <div class="meta"><b>SKU 02841</b><span>Scanned · in stock</span></div>
-      </div>
-      <div class="side-phone">
-        <div class="screen">
-          <div class="ps-status"><span>9:41</span><span class="indicators"><i></i><i></i></span></div>
-          <div class="ps-header" style="padding: 8px 16px 6px">
-            <h4>Inventory</h4>
-            <div><span class="big" style="font-size:20px">248 items</span></div>
-          </div>
-          <div class="ps-list">
-            <div class="ps-row"><span class="thumb a"></span><span class="meta"><b>Linen shirt</b><span>48 in stock</span></span><span class="price">$48</span></div>
-            <div class="ps-row"><span class="thumb b"></span><span class="meta"><b>Lavender candle</b><span>7 left</span></span><span class="price">$22</span></div>
-            <div class="ps-row"><span class="thumb c"></span><span class="meta"><b>Matcha 100g</b><span>126 in stock</span></span><span class="price">$36</span></div>
-            <div class="ps-row"><span class="thumb d"></span><span class="meta"><b>Hand cream</b><span>0 — restock</span></span><span class="price">$18</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="side-bubble br">
-        <span class="ico" style="background: linear-gradient(135deg, #6e94ff, #2f6bff)"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-solid-money"></use></svg></span>
-        <div class="meta"><b>Auto‑synced</b><span>iOS · Android</span></div>
-      </div>
+      <img class="side-product-row" src="/product-row-card.png" alt="XVZ Compact, Portable Pocket product row" />
+      <img class="side-phone-shot" src="/add-new-product-phone.png" alt="Sooda add new product screen" />
+      <img class="side-property-button" src="/barcode-actions-card.png" alt="Scan barcode and generate barcode options" />
     </div>
   </div>
 </section>
@@ -1689,50 +2148,19 @@
   <div class="wrap side-feat reverse">
     <div>
       <h2>Sell now</h2>
-      <p style="color:var(--ink-mute); font-size:17px; margin-bottom:28px">Effortlessly manage your sales process from start to finish.</p>
+      <p class="side-lead">Effortlessly manage your sales process from start to finish.</p>
       <div class="feat-list">
-        <div class="feat-item"><span class="feat-icon"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-solid-chart-up"></use></svg></span> Track your sales</div>
-        <div class="feat-item"><span class="feat-icon"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-solid-chart-bar"></use></svg></span> Daily reports</div>
-        <div class="feat-item"><span class="feat-icon"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-solid-money"></use></svg></span> Minimum selling price control</div>
-        <div class="feat-item"><span class="feat-icon"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-solid-search"></use></svg></span> Scan your product or search</div>
+        <div class="feat-item"><span class="feat-icon"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/heroicons.svg#hero-presentation-chart-line"></use></svg></span> Track your sales</div>
+        <div class="feat-item"><span class="feat-icon"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/heroicons.svg#hero-chart-bar"></use></svg></span> Daily reports</div>
+        <div class="feat-item"><span class="feat-icon"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/heroicons.svg#hero-currency-dollar"></use></svg></span> Minimum selling price control</div>
+        <div class="feat-item"><span class="feat-icon"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/heroicons.svg#hero-magnifying-glass"></use></svg></span> Scan your product or search</div>
       </div>
-    </div>
-    <div class="side-img">
-      <div class="side-bubble tl">
-        <span class="ico" style="background: linear-gradient(135deg, #ffd874, #f5a900); color:#5a3d00"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-solid-chart-up"></use></svg></span>
-        <div class="meta"><b>$2,847 today</b><span>+12% vs yesterday</span></div>
-      </div>
-      <div class="side-phone">
-        <div class="screen">
-          <div class="ps-status"><span>9:41</span><span class="indicators"><i></i><i></i></span></div>
-          <div class="ps-header" style="padding: 8px 16px 6px">
-            <h4>Today's sales</h4>
-            <div><span class="big">$2,847</span><span class="up">↑ 12%</span></div>
-          </div>
-          <div class="ps-chart">
-            <svg viewBox="0 0 200 60" preserveAspectRatio="none">
-              <defs>
-                <linearGradient id="g4" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#2f6bff" stop-opacity="0.35"/>
-                  <stop offset="100%" stop-color="#2f6bff" stop-opacity="0"/>
-                </linearGradient>
-              </defs>
-              <path d="M0,45 L20,38 L40,42 L60,28 L80,32 L100,20 L120,24 L140,12 L160,18 L180,8 L200,14 L200,60 L0,60 Z" fill="url(#g4)"/>
-              <path d="M0,45 L20,38 L40,42 L60,28 L80,32 L100,20 L120,24 L140,12 L160,18 L180,8 L200,14" stroke="#2f6bff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div class="ps-list">
-            <div class="ps-row"><span class="thumb a"></span><span class="meta"><b>Linen shirt</b><span>2 sold</span></span><span class="price">$96</span></div>
-            <div class="ps-row"><span class="thumb b"></span><span class="meta"><b>Lavender candle</b><span>1 sold</span></span><span class="price">$22</span></div>
-            <div class="ps-row"><span class="thumb c"></span><span class="meta"><b>Matcha 100g</b><span>3 sold</span></span><span class="price">$108</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="side-bubble br">
-        <span class="ico" style="background: linear-gradient(135deg, #ff8aa8, #d9477a)"><svg class="ix-solid" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-solid-search"></use></svg></span>
-        <div class="meta"><b>Scan to sell</b><span>Barcode ready</span></div>
-      </div>
-    </div>
+	    </div>
+		    <div class="side-img">
+			      <img class="side-sold-products-card" src="/sold-products-card.png" alt="Sold products summary" />
+			      <img class="side-phone-shot" src="/sell-phone.png" alt="Sooda sell screen" />
+		      <img class="side-scan-card-br" src="/scan-barcode-card.png" alt="Scan Barcode" />
+	    </div>
   </div>
 </section>
 
@@ -1743,21 +2171,21 @@
       <h2>Coming in the near future</h2>
     </div>
     <div class="chips">
-      <div class="chip"><span class="chip-ic-wrap"><svg class="chip-ic ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-users"></use></svg></span> Teams support</div>
-      <div class="chip"><span class="chip-ic-wrap"><svg class="chip-ic ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-shop"></use></svg></span> Your online store</div>
-      <div class="chip"><span class="chip-ic-wrap"><svg class="chip-ic ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-monitor"></use></svg></span> Web version</div>
-      <div class="chip"><span class="chip-ic-wrap"><svg class="chip-ic ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-chart-bar"></use></svg></span> Statistics</div>
-      <div class="chip"><span class="chip-ic-wrap"><svg class="chip-ic ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-globe"></use></svg></span> Multi currency support</div>
-      <div class="chip"><span class="chip-ic-wrap"><svg class="chip-ic ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-language"></use></svg></span> New languages</div>
-      <div class="chip"><span class="chip-ic-wrap"><svg class="chip-ic ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-moon"></use></svg></span> Dark theme</div>
-      <div class="chip"><span class="chip-ic-wrap"><svg class="chip-ic ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-message"></use></svg></span> Additional product properties</div>
+      <div class="chip"><span class="chip-ic-wrap"><svg class="chip-ic ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/heroicons.svg#hero-users"></use></svg></span> Teams support</div>
+      <div class="chip"><span class="chip-ic-wrap"><svg class="chip-ic ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/heroicons.svg#hero-building-storefront"></use></svg></span> Your online store</div>
+      <div class="chip"><span class="chip-ic-wrap"><svg class="chip-ic ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/heroicons.svg#hero-computer-desktop"></use></svg></span> Web version</div>
+      <div class="chip"><span class="chip-ic-wrap"><svg class="chip-ic ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/heroicons.svg#hero-chart-bar"></use></svg></span> Statistics</div>
+      <div class="chip"><span class="chip-ic-wrap"><svg class="chip-ic ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/heroicons.svg#hero-globe-alt"></use></svg></span> Multi currency support</div>
+      <div class="chip"><span class="chip-ic-wrap"><svg class="chip-ic ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/heroicons.svg#hero-language"></use></svg></span> New languages</div>
+      <div class="chip"><span class="chip-ic-wrap"><svg class="chip-ic ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/heroicons.svg#hero-moon"></use></svg></span> Dark theme</div>
+      <div class="chip"><span class="chip-ic-wrap"><svg class="chip-ic ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/heroicons.svg#hero-chat-bubble-text"></use></svg></span> Additional product properties</div>
     </div>
     <p class="chips-foot">And so much more coming!</p>
   </div>
 </section>
 
 <!-- TESTIMONIALS -->
-<section style="background: var(--bg-soft);">
+<section class="testimonials-section">
   <div class="wrap">
     <div class="section-head">
       <h2>What our users say</h2>
@@ -1766,20 +2194,102 @@
     <div class="testi-row">
       <div class="testi">
         <p>“As a small business owner, I struggled to keep track of my inventory and sales. This app has been a game‑changer for me. The intuitive interface and powerful features make it so easy to manage everything in one place.”</p>
-        <div class="testi-person"><div class="avatar">TW</div><div><h4>Trent Walker</h4><small>Entrepreneur</small></div></div>
+        <div class="testi-person"><div class="avatar"><img src="/testimonials/trent-walker.jpg" alt="Trent Walker" /></div><div><h4>Trent Walker</h4><small>Entrepreneur</small></div></div>
       </div>
       <div class="testi">
         <p>“I was skeptical at first, but after trying this app, I'm blown away by how efficient it is. Sales tracking tools are simple and useful. I love how I can monitor my inventory and get insights into what's selling well.”</p>
-        <div class="testi-person"><div class="avatar">MJ</div><div><h4>Melissa Johnson</h4><small>Manager</small></div></div>
+        <div class="testi-person"><div class="avatar"><img src="/testimonials/melissa-johnson.jpg" alt="Melissa Johnson" /></div><div><h4>Melissa Johnson</h4><small>Manager</small></div></div>
       </div>
       <div class="testi">
         <p>“This app is incredibly user‑friendly and efficient, perfect for both beginners and experienced business owners. All the tools I need — inventory management, sales tracking — are in one place.”</p>
-        <div class="testi-person"><div class="avatar">RC</div><div><h4>Roger Callen</h4><small>Entrepreneur</small></div></div>
+        <div class="testi-person"><div class="avatar"><img src="/testimonials/roger-callen.jpg" alt="Roger Callen" /></div><div><h4>Roger Callen</h4><small>Entrepreneur</small></div></div>
       </div>
       <div class="testi">
         <p>“This app has completely transformed the way I manage my business. Highly recommended!”</p>
-        <div class="testi-person"><div class="avatar">SN</div><div><h4>Sarah Nelson</h4><small>Small business owner</small></div></div>
+        <div class="testi-person"><div class="avatar"><img src="/testimonials/sarah-nelson.jpg" alt="Sarah Nelson" /></div><div><h4>Sarah Nelson</h4><small>Small business owner</small></div></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="pricing-section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Simple pricing</h2>
+      <p>Start free, then upgrade when your products, sales, and team need more room.</p>
+    </div>
+    <div class="billing-switch" aria-label="Choose billing period">
+      <div class="billing-tabs" role="tablist" aria-label="Billing period">
+        <button type="button" class="billing-tab is-active" role="tab" aria-selected="true" data-billing-option="monthly">Monthly</button>
+        <button type="button" class="billing-tab" role="tab" aria-selected="false" data-billing-option="yearly">Yearly <span class="billing-discount">-15% off</span></button>
+      </div>
+    </div>
+    <div class="pricing-grid">
+      <article class="pricing-card">
+        <div class="pricing-head">
+          <h3>Free</h3>
+        </div>
+        <p class="pricing-desc">A simple starting point for testing your product catalog and selling flow.</p>
+        <div class="price-stack" aria-label="Free pricing" data-monthly="$0.0" data-yearly="$0.0" data-monthly-note="Always free" data-yearly-note="Always free">
+          <div class="price-row">
+            <span class="price-period" data-price-period>Monthly</span>
+            <div class="price-value"><strong data-price>$0.0</strong><small>/mo</small></div>
+          </div>
+          <div class="price-note" data-price-note>Always free</div>
+        </div>
+        <ul class="pricing-features">
+          <li><span class="pricing-check" aria-hidden="true"><svg class="ix" viewBox="0 0 24 24"><use href="/heroicons.svg#hero-check-circle"></use></svg></span><span>10 free products</span></li>
+          <li><span class="pricing-check" aria-hidden="true"><svg class="ix" viewBox="0 0 24 24"><use href="/heroicons.svg#hero-check-circle"></use></svg></span><span>Sell now</span></li>
+        </ul>
+        <a href="#download" class="pricing-action">Start free</a>
+      </article>
+
+      <article class="pricing-card featured">
+        <div class="pricing-head">
+          <h3>Individual</h3>
+          <span class="pricing-pill">Best value</span>
+        </div>
+        <p class="pricing-desc">Built for active sellers who need unlimited products, analytics, and store tools.</p>
+        <div class="price-stack" aria-label="Individual pricing" data-monthly="$6.9" data-yearly="$4.9" data-monthly-note="Pay monthly" data-yearly-note="Billed yearly">
+          <div class="price-row">
+            <span class="price-period" data-price-period>Monthly</span>
+            <div class="price-value"><strong data-price>$6.9</strong><small>/mo</small></div>
+          </div>
+          <div class="price-note" data-price-note>Pay monthly</div>
+        </div>
+        <ul class="pricing-features">
+          <li><span class="pricing-check" aria-hidden="true"><svg class="ix" viewBox="0 0 24 24"><use href="/heroicons.svg#hero-check-circle"></use></svg></span><span>Unlimited products</span></li>
+          <li><span class="pricing-check" aria-hidden="true"><svg class="ix" viewBox="0 0 24 24"><use href="/heroicons.svg#hero-check-circle"></use></svg></span><span>Sell now</span></li>
+          <li><span class="pricing-check" aria-hidden="true"><svg class="ix" viewBox="0 0 24 24"><use href="/heroicons.svg#hero-check-circle"></use></svg></span><span>Extended statistics</span></li>
+          <li><span class="pricing-check" aria-hidden="true"><svg class="ix" viewBox="0 0 24 24"><use href="/heroicons.svg#hero-check-circle"></use></svg></span><span>Online store</span></li>
+        </ul>
+        <a href="#download" class="pricing-action">Choose Individual</a>
+      </article>
+
+      <article class="pricing-card">
+        <div class="pricing-head">
+          <h3>Team</h3>
+          <span class="pricing-pill">Coming soon</span>
+        </div>
+        <p class="pricing-desc">For growing operations with shared access, team roles, and permissions.</p>
+        <div class="price-stack" aria-label="Team pricing" data-monthly="$19.9" data-yearly="$17.9" data-monthly-note="Coming soon" data-yearly-note="Coming soon">
+          <div class="price-row">
+            <span class="price-period" data-price-period>Monthly</span>
+            <div class="price-value"><strong data-price>$19.9</strong><small>/mo</small></div>
+          </div>
+          <div class="price-note" data-price-note>Coming soon</div>
+        </div>
+        <ul class="pricing-features">
+          <li><span class="pricing-check" aria-hidden="true"><svg class="ix" viewBox="0 0 24 24"><use href="/heroicons.svg#hero-check-circle"></use></svg></span><span>Unlimited products</span></li>
+          <li><span class="pricing-check" aria-hidden="true"><svg class="ix" viewBox="0 0 24 24"><use href="/heroicons.svg#hero-check-circle"></use></svg></span><span>Sell now</span></li>
+          <li><span class="pricing-check" aria-hidden="true"><svg class="ix" viewBox="0 0 24 24"><use href="/heroicons.svg#hero-check-circle"></use></svg></span><span>Extended statistics</span></li>
+          <li><span class="pricing-check" aria-hidden="true"><svg class="ix" viewBox="0 0 24 24"><use href="/heroicons.svg#hero-check-circle"></use></svg></span><span>Online store</span></li>
+          <li><span class="pricing-check" aria-hidden="true"><svg class="ix" viewBox="0 0 24 24"><use href="/heroicons.svg#hero-check-circle"></use></svg></span><span>Team accounts</span></li>
+          <li><span class="pricing-check" aria-hidden="true"><svg class="ix" viewBox="0 0 24 24"><use href="/heroicons.svg#hero-check-circle"></use></svg></span><span>Team account permissions</span></li>
+        </ul>
+        <span class="pricing-action disabled">Coming soon</span>
+      </article>
     </div>
   </div>
 </section>
@@ -1788,7 +2298,7 @@
 <section id="faq">
   <div class="wrap">
     <div class="section-head">
-      <h2>Sooda in a nutshell</h2>
+      <h2>Frequently Asked Questions</h2>
     </div>
     <div class="faq" id="faq-list">
       <div class="faq-item"><button class="faq-q">What is this app designed for?<span class="plus">+</span></button><div class="faq-a"><p>This app is designed to help businesses manage inventory, track sales, track statistics and create an online store quickly and efficiently. (Statistics and online store coming soon)</p></div></div>
@@ -1810,20 +2320,28 @@
       <div class="endcap-col endcap-brand">
         <img src="/logo-white.svg" alt="Sooda" />
         <p>Inventory, sales, storefront, and operations tools designed to help modern small businesses move faster with less friction.</p>
+        <div class="footer-stores" aria-label="Download Sooda">
+          <a href="#download" class="store-badge" aria-label="Download on the App Store">
+            <img src="/app-store.svg" alt="Download on the App Store" />
+          </a>
+          <a href="#download" class="store-badge" aria-label="Get it on Google Play">
+            <img src="/google-play.svg" alt="Get it on Google Play" />
+          </a>
+        </div>
       </div>
       <div class="endcap-col">
         <div class="endcap-title">Product</div>
         <div class="endcap-links">
           <a href="/#features">Features</a>
           <a href="/#benefits">Who it's for</a>
-          <a href="/#faq">Help center</a>
+          <a href="/help.html">Help center</a>
           <a href="#download">Get the app</a>
         </div>
       </div>
       <div class="endcap-col">
         <div class="endcap-title">Company</div>
         <div class="endcap-links">
-          <a href="mailto:hello@sooda.app">Contact us</a>
+          <a href="/contact.html">Contact us</a>
           <a href="/terms.html">Terms of Use</a>
           <a href="/privacy.html">Privacy Policy</a>
         </div>
@@ -1842,9 +2360,9 @@
         <span>© 2025 Sooda. All rights reserved.</span>
       </div>
       <div class="endcap-socials">
-        <a href="#" aria-label="Instagram"><svg class="ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-instagram"></use></svg></a>
-        <a href="#" aria-label="Twitter"><svg class="ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-twitter"></use></svg></a>
-        <a href="#" aria-label="LinkedIn"><svg class="ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-linkedin"></use></svg></a>
+        <a href="#" aria-label="Instagram"><svg class="ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/heroicons.svg#hero-camera"></use></svg></a>
+        <a href="#" aria-label="Twitter"><svg class="ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/heroicons.svg#hero-chat-bubbles"></use></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg class="ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/heroicons.svg#hero-briefcase"></use></svg></a>
       </div>
     </div>
   </div>
@@ -1890,88 +2408,48 @@
     tick();
   })();
 
-  // Slow auto slider for testimonials
+  // Pricing billing switcher
   (() => {
-    const row = document.querySelector('.testi-row');
-    if (!row || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const tabs = Array.from(document.querySelectorAll('[data-billing-option]'));
+    const prices = Array.from(document.querySelectorAll('.price-stack[data-monthly][data-yearly]'));
+    if (!tabs.length || !prices.length) return;
 
-    const cards = Array.from(row.children);
-    if (cards.length < 2) return;
+    const labels = { monthly: 'Monthly', yearly: 'Yearly' };
 
-    cards.forEach(card => {
-      row.appendChild(card.cloneNode(true));
+    const setBilling = (period) => {
+      tabs.forEach((tab) => {
+        const isActive = tab.dataset.billingOption === period;
+        tab.classList.toggle('is-active', isActive);
+        tab.setAttribute('aria-selected', String(isActive));
+        tab.tabIndex = isActive ? 0 : -1;
+      });
+
+      prices.forEach((priceBox) => {
+        const value = priceBox.dataset[period];
+        const price = priceBox.querySelector('[data-price]');
+        const label = priceBox.querySelector('[data-price-period]');
+        const note = priceBox.querySelector('[data-price-note]');
+        if (price && value) price.textContent = value;
+        if (label) label.textContent = labels[period] || labels.monthly;
+        if (note) note.textContent = priceBox.dataset[`${period}Note`] || '';
+      });
+    };
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => setBilling(tab.dataset.billingOption));
+      tab.addEventListener('keydown', (event) => {
+        if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+        event.preventDefault();
+        const current = tabs.indexOf(tab);
+        const next = event.key === 'ArrowRight'
+          ? (current + 1) % tabs.length
+          : (current - 1 + tabs.length) % tabs.length;
+        tabs[next].focus();
+        setBilling(tabs[next].dataset.billingOption);
+      });
     });
 
-    let paused = false;
-    let inView = false;
-    let rafId = 0;
-    let lastTime = 0;
-    const loopPoint = row.scrollWidth / 2;
-    const speed = 0.035; // px per ms for a gentle Framer-like drift
-
-    const shouldRun = () => !paused && inView && !document.hidden;
-
-    const step = (time) => {
-      if (!shouldRun()) {
-        rafId = 0;
-        lastTime = 0;
-        return;
-      }
-
-      if (!lastTime) lastTime = time;
-      const delta = time - lastTime;
-      lastTime = time;
-
-      row.scrollLeft += delta * speed;
-      if (row.scrollLeft >= loopPoint) {
-        row.scrollLeft -= loopPoint;
-      }
-
-      rafId = window.requestAnimationFrame(step);
-    };
-
-    const syncLoop = () => {
-      if (shouldRun()) {
-        if (!rafId) rafId = window.requestAnimationFrame(step);
-      } else if (rafId) {
-        window.cancelAnimationFrame(rafId);
-        rafId = 0;
-        lastTime = 0;
-      }
-    };
-
-    const pause = () => { paused = true; };
-    const resume = () => {
-      paused = false;
-      lastTime = 0;
-    };
-
-    row.addEventListener('mouseenter', pause);
-    row.addEventListener('mouseleave', resume);
-    row.addEventListener('focusin', pause);
-    row.addEventListener('focusout', resume);
-    row.addEventListener('touchstart', pause, { passive: true });
-    row.addEventListener('touchend', resume, { passive: true });
-    row.addEventListener('mouseenter', syncLoop);
-    row.addEventListener('mouseleave', syncLoop);
-    row.addEventListener('focusin', syncLoop);
-    row.addEventListener('focusout', syncLoop);
-    row.addEventListener('touchstart', syncLoop, { passive: true });
-    row.addEventListener('touchend', syncLoop, { passive: true });
-
-    const observer = new IntersectionObserver((entries) => {
-      inView = entries[0]?.isIntersecting ?? false;
-      syncLoop();
-    }, { threshold: 0.15 });
-
-    observer.observe(row);
-    document.addEventListener('visibilitychange', syncLoop);
-
-    window.addEventListener('beforeunload', () => {
-      observer.disconnect();
-      document.removeEventListener('visibilitychange', syncLoop);
-      window.cancelAnimationFrame(rafId);
-    }, { once: true });
+    setBilling('monthly');
   })();
 
   // Scroll fill animation for the banner headline

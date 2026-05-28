@@ -108,6 +108,10 @@
   <symbol id="ix-arrow-right" viewBox="0 0 24 24">
     <path d="M9 6l6 6-6 6"/>
   </symbol>
+  <symbol id="ix-tick-circle" viewBox="0 0 24 24">
+    <path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+    <path d="m7.75 12 2.83 2.83 5.67-5.66"/>
+  </symbol>
   <symbol id="ix-instagram" viewBox="0 0 24 24">
     <rect x="4" y="4" width="16" height="16" rx="4.5"/>
     <circle cx="12" cy="12" r="3.5"/>

@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Contact Sooda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --surface-page: #ffffff;
+    --surface-section-soft: #f6f7fa;
+    --surface-card: #ffffff;
+    --surface-card-soft: #f8faff;
+    --surface-footer: #07163f;
+    --surface-dark: #0b1120;
+    --surface-nav-brand: #0638F6;
+    --ink: #0b0f1c;
+    --ink-2: #2a2f3d;
+    --ink-mute: #62697b;
+    --line: #e6e8ee;
+    --brand: #2f6bff;
+    --brand-2: #1f4fd1;
+    --brand-soft: #eaf0ff;
+    --brand-base: #0638F6;
+    --radius-md: 18px;
+    --shadow-sm: 0 1px 2px rgba(13,18,32,0.04), 0 2px 6px -2px rgba(13,18,32,0.05);
+    --shadow-md: 0 8px 24px -10px rgba(13,18,32,0.18), 0 2px 6px -2px rgba(13,18,32,0.06);
+    --text-xs: 12px;
+    --text-sm: 14px;
+    --text-base: 15px;
+    --text-md: 16px;
+    --text-lg: 17px;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+    --title-panel: 26px;
+    --title-subsection: clamp(32px, 3.5vw, 44px);
+    --lh-body: 1.55;
+    --lh-tight: 1.08;
+    --track-normal: 0;
+    --track-tight: 0;
+    --gradient-banner: radial-gradient(820px 420px at 100% 0%, rgba(255,255,255,0.18), transparent 62%), radial-gradient(620px 360px at 0% 100%, rgba(110,148,255,0.32), transparent 64%), linear-gradient(135deg, var(--brand-base) 0%, #174BFA 54%, var(--brand-2) 100%);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    line-height: var(--lh-body);
+    color: var(--ink);
+    background: var(--surface-section-soft);
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  button, input, textarea { font: inherit; }
+  button { cursor: pointer; border: none; }
+  h1, h2, h3 { margin: 0; line-height: var(--lh-tight); letter-spacing: var(--track-tight); }
+  p { margin: 0; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--surface-nav-brand);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .nav-inner {
+    height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    line-height: 0;
+  }
+  .logo img { width: 148px; height: auto; }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    color: rgba(255,255,255,0.92);
+    font-size: var(--text-base);
+    font-weight: var(--weight-medium);
+  }
+
+  .contact-hero {
+    padding: 72px 0 40px;
+    background: var(--brand-base);
+    color: #fff;
+    text-align: center;
+  }
+  .contact-hero h1 {
+    font-size: var(--title-subsection);
+    font-weight: var(--weight-bold);
+  }
+  .contact-hero p {
+    max-width: 520px;
+    margin: 14px auto 0;
+    color: rgba(255,255,255,0.78);
+    font-size: var(--text-lg);
+  }
+  .contact-body {
+    padding: 72px 0 96px;
+    background: var(--surface-section-soft);
+  }
+  .contact-card {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 28px;
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    background: linear-gradient(180deg, var(--surface-card) 0%, var(--surface-card-soft) 100%);
+    box-shadow: var(--shadow-md);
+  }
+  .contact-form {
+    display: grid;
+    gap: 18px;
+  }
+  .field {
+    display: grid;
+    gap: 8px;
+  }
+  .field label {
+    color: var(--ink);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+  }
+  .field input,
+  .field textarea {
+    width: 100%;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: #fff;
+    color: var(--ink);
+    outline: none;
+    font-size: var(--text-base);
+    transition: border-color .18s ease, box-shadow .18s ease;
+  }
+  .field input {
+    height: 52px;
+    padding: 0 16px;
+  }
+  .field textarea {
+    min-height: 150px;
+    resize: vertical;
+    padding: 14px 16px;
+  }
+  .field input:focus,
+  .field textarea:focus {
+    border-color: rgba(47,107,255,0.48);
+    box-shadow: 0 0 0 4px rgba(47,107,255,0.1);
+  }
+  .send-button {
+    height: 52px;
+    border-radius: 14px;
+    background: var(--surface-dark);
+    color: #fff;
+    font-size: var(--text-base);
+    font-weight: var(--weight-bold);
+    transition: transform .16s ease, background .16s ease;
+  }
+  .send-button:hover {
+    transform: translateY(-1px);
+    background: #111827;
+  }
+  .form-status {
+    color: var(--ink-mute);
+    font-size: var(--text-sm);
+    min-height: 22px;
+  }
+
+  .store-badge {
+    display: inline-flex;
+    align-items: center;
+    line-height: 0;
+    border-radius: 10px;
+    transition: transform .16s ease, filter .16s ease;
+  }
+  .store-badge:hover {
+    transform: translateY(-2px);
+    filter: drop-shadow(0 14px 18px rgba(5, 13, 45, 0.16));
+  }
+  .endcap {
+    position: relative;
+    overflow: hidden;
+    background: var(--surface-footer);
+    color: #fff;
+    min-height: 880px;
+  }
+  .endcap-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr 1fr 1fr;
+    gap: 0;
+    position: relative;
+    z-index: 2;
+  }
+  .endcap-col {
+    padding: 42px 34px 120px;
+    min-height: 420px;
+  }
+  .endcap-brand > img {
+    width: 140px;
+    height: auto;
+    margin-bottom: 22px;
+  }
+  .endcap-brand p {
+    max-width: 260px;
+    color: rgba(255,255,255,0.68);
+    font-size: var(--text-base);
+    line-height: var(--lh-body);
+  }
+  .endcap-brand .footer-stores {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
+  }
+  .endcap-brand .store-badge img {
+    width: auto;
+    height: 46px;
+    margin: 0;
+  }
+  .endcap-title {
+    color: rgba(255,255,255,0.42);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+    margin-bottom: 20px;
+    letter-spacing: var(--track-normal);
+  }
+  .endcap-links,
+  .endcap-support {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .endcap-links a,
+  .endcap-support a,
+  .endcap-support span {
+    color: rgba(255,255,255,0.82);
+    font-size: var(--text-lg);
+    line-height: var(--lh-body);
+  }
+  .endcap-bottom {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 26px 0 0;
+    margin-top: -24px;
+  }
+  .endcap-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px 28px;
+    color: rgba(255,255,255,0.62);
+    font-size: var(--text-sm);
+  }
+  .endcap-socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .endcap-socials a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.14);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.88);
+    background: rgba(255,255,255,0.03);
+  }
+  .ix {
+    width: 18px;
+    height: 18px;
+    display: block;
+    fill: currentColor;
+    stroke: none;
+  }
+  .endcap-wordmark {
+    position: absolute;
+    left: 50%;
+    bottom: 6px;
+    transform: translateX(-50%);
+    width: min(860px, 64vw);
+    opacity: 0.22;
+    pointer-events: none;
+    user-select: none;
+    mask-image: linear-gradient(to top, rgba(255,255,255,0.85), rgba(255,255,255,0.1) 55%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to top, rgba(255,255,255,0.85), rgba(255,255,255,0.1) 55%, transparent 100%);
+  }
+
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .contact-hero { padding: 58px 0 34px; }
+    .contact-card { padding: 22px; }
+    .endcap {
+      min-height: 0;
+      padding-bottom: 180px;
+    }
+    .endcap-grid { grid-template-columns: 1fr; }
+    .endcap-col {
+      min-height: 0;
+      padding: 28px 22px;
+    }
+    .endcap-bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 0;
+      padding: 26px 22px 0;
+    }
+    .endcap-wordmark {
+      bottom: 10px;
+      width: min(540px, 84vw);
+    }
+  }
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="/" class="logo" aria-label="Sooda home"><img src="/logo-white.svg" alt="Sooda" /></a>
+    <nav class="nav-links">
+      <a href="/help.html">Help</a>
+      <a href="/contact.html">Contact us</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="contact-hero">
+    <div class="wrap">
+      <h1>Contact us</h1>
+      <p>Send us a message and we will get back to you.</p>
+    </div>
+  </section>
+
+  <section class="contact-body">
+    <div class="wrap">
+      <div class="contact-card">
+        <form class="contact-form" data-contact-form>
+          <div class="field">
+            <label for="contact-email">Email</label>
+            <input id="contact-email" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="contact-name">Name</label>
+            <input id="contact-name" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" required></textarea>
+          </div>
+          <button class="send-button" type="submit">Send</button>
+          <p class="form-status" data-contact-status aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<section id="download" class="endcap" aria-label="Extended footer">
+  <div class="wrap">
+    <div class="endcap-grid">
+      <div class="endcap-col endcap-brand">
+        <img src="/logo-white.svg" alt="Sooda" />
+        <p>Inventory, sales, storefront, and operations tools designed to help modern small businesses move faster with less friction.</p>
+        <div class="footer-stores" aria-label="Download Sooda">
+          <a href="#download" class="store-badge" aria-label="Download on the App Store">
+            <img src="/app-store.svg" alt="Download on the App Store" />
+          </a>
+          <a href="#download" class="store-badge" aria-label="Get it on Google Play">
+            <img src="/google-play.svg" alt="Get it on Google Play" />
+          </a>
+        </div>
+      </div>
+      <div class="endcap-col">
+        <div class="endcap-title">Product</div>
+        <div class="endcap-links">
+          <a href="/#features">Features</a>
+          <a href="/#benefits">Who it's for</a>
+          <a href="/help.html">Help center</a>
+          <a href="#download">Get the app</a>
+        </div>
+      </div>
+      <div class="endcap-col">
+        <div class="endcap-title">Company</div>
+        <div class="endcap-links">
+          <a href="/contact.html">Contact us</a>
+          <a href="/terms.html">Terms of Use</a>
+          <a href="/privacy.html">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="endcap-col">
+        <div class="endcap-title">Support</div>
+        <div class="endcap-support">
+          <span>Questions or partnership inquiries</span>
+          <a href="mailto:hello@sooda.app">hello@sooda.app</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="endcap-bottom">
+      <div class="endcap-meta">
+        <span>© 2025 Sooda. All rights reserved.</span>
+      </div>
+      <div class="endcap-socials">
+        <a href="#" aria-label="Instagram"><svg class="ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/heroicons.svg#hero-camera"></use></svg></a>
+        <a href="#" aria-label="Twitter"><svg class="ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/heroicons.svg#hero-chat-bubbles"></use></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg class="ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/heroicons.svg#hero-briefcase"></use></svg></a>
+      </div>
+    </div>
+  </div>
+  <div class="endcap-wordmark" aria-hidden="true">
+    <img src="/logo-white.svg" alt="" />
+  </div>
+</section>
+
+<script>
+  (() => {
+    const form = document.querySelector('[data-contact-form]');
+    const status = document.querySelector('[data-contact-status]');
+    if (!form) return;
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const email = String(data.get('email') || '').trim();
+      const name = String(data.get('name') || '').trim();
+      const message = String(data.get('message') || '').trim();
+      const subject = encodeURIComponent(`Sooda contact from ${name || 'website visitor'}`);
+      const body = encodeURIComponent(`Email: ${email}\nName: ${name}\n\n${message}`);
+      if (status) status.textContent = 'Opening your email app...';
+      window.location.href = `mailto:hello@sooda.app?subject=${subject}&body=${body}`;
+    });
+  })();
+</script>
+</body>
+</html>

@@ -8,24 +8,75 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #f7f9fc;
-    --card: #ffffff;
+	  :root {
+	    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+	    --surface-page: #ffffff;
+	    --surface-section-soft: #f6f7fa;
+	    --surface-section-muted: #eef1f6;
+	    --surface-card: #ffffff;
+	    --surface-card-soft: #f8faff;
+	    --surface-card-blue: #eef3ff;
+	    --surface-footer: #07163f;
+	    --surface-dark: #0b1120;
+	    --surface-nav-glass: rgba(255,255,255,0.96);
+	    --surface-nav-brand: #0638F6;
+	    --bg: var(--surface-section-soft);
+    --card: var(--surface-card);
     --ink: #0b1120;
     --muted: #687086;
     --line: #e6ebf3;
-    --brand: #0638F6;
-    --brand-deep: #0a1848;
-    --radius: 22px;
-    --shadow: 0 24px 48px -28px rgba(11,17,32,0.18);
-  }
+    --brand: var(--surface-nav-brand);
+    --brand-deep: var(--surface-footer);
+	    --brand-base: var(--surface-nav-brand);
+	    --brand-hero-mid: #163ce8;
+	    --brand-dark: var(--surface-footer);
+	    --radius: 22px;
+	    --shadow: 0 24px 48px -28px rgba(11,17,32,0.18);
+	    --text-xs: 12px;
+	    --text-sm: 14px;
+	    --text-base: 15px;
+	    --text-md: 16px;
+	    --text-lg: 17px;
+	    --text-xl: 18px;
+	    --weight-regular: 400;
+	    --weight-medium: 500;
+	    --weight-semibold: 600;
+	    --weight-bold: 700;
+	    --weight-extrabold: 800;
+	    --title-card: 22px;
+	    --title-panel: 26px;
+	    --title-price: clamp(30px, 3vw, 38px);
+	    --title-section: clamp(34px, 4vw, 52px);
+	    --title-subsection: clamp(32px, 3.5vw, 44px);
+	    --title-banner: clamp(28px, 3vw, 42px);
+	    --title-hero: clamp(44px, 5.4vw, 64px);
+	    --title-footer: clamp(34px, 4.4vw, 56px);
+	    --title-footer-mobile: 42px;
+	    --title-legal: var(--title-hero);
+	    --title-legal-mobile: 42px;
+	    --lh-body: 1.55;
+	    --lh-tight: 1.08;
+	    --track-normal: 0;
+	    --track-tight: 0;
+	    --track-display: 0;
+	    --gradient-page-glow: radial-gradient(900px 600px at 90% -10%, rgba(47,107,255,0.07), transparent 60%);
+	    --gradient-brand-hero: var(--brand-base);
+	    --gradient-card: linear-gradient(180deg, var(--surface-card) 0%, var(--surface-card-soft) 100%);
+	    --gradient-card-muted: linear-gradient(180deg, #f5f7fb 0%, var(--surface-section-muted) 100%);
+	    --gradient-card-featured: radial-gradient(420px 260px at 50% 0%, rgba(47,107,255,0.13), transparent 72%), linear-gradient(180deg, var(--surface-card) 0%, var(--surface-card-blue) 100%);
+	    --gradient-placeholder: linear-gradient(135deg, rgba(47,107,255,0.065) 25%, transparent 25%) 0 0 / 22px 22px, linear-gradient(135deg, transparent 75%, rgba(47,107,255,0.065) 75%) 0 0 / 22px 22px, linear-gradient(180deg, #ffffff 0%, #edf3ff 100%);
+	    --gradient-placeholder-dark: linear-gradient(135deg, rgba(255,255,255,0.07) 25%, transparent 25%) 0 0 / 20px 20px, linear-gradient(135deg, transparent 75%, rgba(255,255,255,0.06) 75%) 0 0 / 20px 20px, linear-gradient(135deg, #111827 0%, #17233a 100%);
+	    --gradient-banner: radial-gradient(820px 420px at 100% 0%, rgba(255,255,255,0.18), transparent 62%), radial-gradient(620px 360px at 0% 100%, rgba(110,148,255,0.32), transparent 64%), linear-gradient(135deg, var(--brand-base) 0%, #174BFA 54%, var(--brand-2) 100%);
+	    --gradient-footer-shell: radial-gradient(circle at 50% 18%, rgba(47,107,255,0.28), transparent 30%), radial-gradient(circle at top right, rgba(47,107,255,0.26), transparent 28%), linear-gradient(135deg, var(--surface-dark) 0%, #101b37 100%);
+	  }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
   body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+	    font-family: var(--font-sans);
+	    font-size: var(--text-base);
     background: var(--bg);
     color: var(--ink);
-    line-height: 1.6;
+	    line-height: var(--lh-body);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -37,7 +88,7 @@
     left: 0;
     right: 0;
     z-index: 50;
-    background: rgba(255,255,255,0.96);
+    background: var(--surface-nav-glass);
     border-bottom: 1px solid rgba(11,17,32,0.08);
     box-shadow: 0 14px 30px -24px rgba(13,18,32,0.24);
     backdrop-filter: blur(12px);
@@ -50,7 +101,7 @@
     justify-content: space-between;
     gap: 24px;
   }
-  .logo img { width: 132px; height: auto; display: block; }
+  .logo img { width: 148px; height: auto; display: block; }
   .nav-links {
     display: flex;
     align-items: center;
@@ -60,8 +111,8 @@
   }
   .nav-links a {
     color: #27314d;
-    font-size: 15px;
-    font-weight: 500;
+	    font-size: var(--text-base);
+    font-weight: var(--weight-medium);
     transition: opacity .15s ease;
   }
   .nav-links a:hover { opacity: 0.78; }
@@ -75,20 +126,20 @@
     border-radius: 999px;
     background: rgba(6,56,246,0.08);
     color: var(--brand);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.02em;
+	    font-size: var(--text-xs);
+    font-weight: var(--weight-bold);
+	    letter-spacing: var(--track-normal);
     margin-bottom: 18px;
   }
   h1 {
-    font-size: clamp(40px, 5vw, 62px);
-    line-height: 1.02;
-    letter-spacing: -0.04em;
+	    font-size: var(--title-legal);
+	    line-height: var(--lh-tight);
+	    letter-spacing: var(--track-display);
     margin: 0 0 14px;
   }
   .hero p {
     max-width: 720px;
-    font-size: 18px;
+	    font-size: var(--text-lg);
     color: var(--muted);
     margin: 0;
   }
@@ -107,7 +158,7 @@
     margin-bottom: 18px;
     border-bottom: 1px solid var(--line);
     color: var(--muted);
-    font-size: 14px;
+	    font-size: var(--text-sm);
   }
   .section + .section {
     margin-top: 26px;
@@ -115,15 +166,15 @@
     border-top: 1px solid var(--line);
   }
   .section h2 {
-    font-size: 24px;
-    line-height: 1.1;
+	    font-size: var(--title-panel);
+    line-height: var(--lh-tight);
     margin: 0 0 10px;
-    letter-spacing: -0.03em;
+	    letter-spacing: var(--track-tight);
   }
   .section p {
     margin: 0;
     color: #34405d;
-    font-size: 16px;
+	    font-size: var(--text-base);
   }
   .section p + p {
     margin-top: 12px;
@@ -131,9 +182,8 @@
   .endcap {
     position: relative;
     overflow: hidden;
-    background: #07163f;
+    background: var(--surface-footer);
     color: #fff;
-    border-top: 1px solid rgba(255,255,255,0.06);
     min-height: 880px;
   }
   .endcap-grid {
@@ -145,11 +195,20 @@
   }
   .endcap-col {
     padding: 42px 34px 120px;
-    border-left: 1px solid rgba(255,255,255,0.08);
     min-height: 420px;
   }
-  .endcap-col:first-child { border-left: none; }
-  .endcap-brand img {
+  .store-badge {
+    display: inline-flex;
+    align-items: center;
+    line-height: 0;
+    border-radius: 10px;
+    transition: transform .16s ease, filter .16s ease;
+  }
+  .store-badge:hover {
+    transform: translateY(-2px);
+    filter: drop-shadow(0 14px 18px rgba(5, 13, 45, 0.16));
+  }
+  .endcap-brand > img {
     width: 140px;
     height: auto;
     margin-bottom: 22px;
@@ -157,16 +216,27 @@
   .endcap-brand p {
     max-width: 260px;
     color: rgba(255,255,255,0.68);
-    font-size: 15px;
-    line-height: 1.7;
+	    font-size: var(--text-base);
+    line-height: var(--lh-body);
+    margin: 0;
+  }
+  .endcap-brand .footer-stores {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
+  }
+  .endcap-brand .store-badge img {
+    width: auto;
+    height: 46px;
     margin: 0;
   }
   .endcap-title {
     color: rgba(255,255,255,0.42);
-    font-size: 14px;
-    font-weight: 600;
+	    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
     margin-bottom: 20px;
-    letter-spacing: 0.01em;
+	    letter-spacing: var(--track-normal);
   }
   .endcap-links,
   .endcap-support {
@@ -178,8 +248,8 @@
   .endcap-support a,
   .endcap-support span {
     color: rgba(255,255,255,0.82);
-    font-size: 18px;
-    line-height: 1.45;
+	    font-size: var(--text-lg);
+    line-height: var(--lh-body);
     transition: color .2s ease, opacity .2s ease;
   }
   .endcap-links a:hover,
@@ -188,12 +258,8 @@
     width: 18px;
     height: 18px;
     display: block;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.9;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    vector-effect: non-scaling-stroke;
+    fill: currentColor;
+    stroke: none;
   }
   .endcap-bottom {
     position: relative;
@@ -204,14 +270,13 @@
     gap: 24px;
     padding: 26px 0 0;
     margin-top: -24px;
-    border-top: 1px solid rgba(255,255,255,0.08);
   }
   .endcap-meta {
     display: flex;
     flex-wrap: wrap;
     gap: 18px 28px;
     color: rgba(255,255,255,0.62);
-    font-size: 14px;
+	    font-size: var(--text-sm);
   }
   .endcap-socials {
     display: flex;
@@ -242,7 +307,7 @@
     bottom: 6px;
     transform: translateX(-50%);
     width: min(860px, 64vw);
-    opacity: 0.14;
+    opacity: 0.22;
     pointer-events: none;
     user-select: none;
     mask-image: linear-gradient(to top, rgba(255,255,255,0.85), rgba(255,255,255,0.1) 55%, transparent 100%);
@@ -256,8 +321,8 @@
   @media (max-width: 760px) {
     .hero { padding-top: 42px; }
     .legal-card { padding: 24px; border-radius: 24px; }
-    h1 { font-size: 38px; }
-    .hero p { font-size: 16px; }
+	    h1 { font-size: var(--title-legal-mobile); }
+	    .hero p { font-size: var(--text-md); }
     .endcap {
       min-height: 0;
       padding-bottom: 180px;
@@ -267,12 +332,10 @@
       min-height: 0;
       padding: 28px 22px;
       border-left: none;
-      border-top: 1px solid rgba(255,255,255,0.08);
     }
-    .endcap-col:first-child { border-top: none; }
     .endcap-links a,
     .endcap-support a,
-    .endcap-support span { font-size: 17px; }
+	    .endcap-support span { font-size: var(--text-lg); }
     .endcap-bottom {
       flex-direction: column;
       align-items: flex-start;
@@ -291,8 +354,8 @@
     <div class="wrap nav-inner">
       <a href="/" class="logo" aria-label="Sooda home"><img src="/logo-blue.svg" alt="Sooda" /></a>
       <nav class="nav-links">
-        <a href="/#faq">Help</a>
-        <a href="mailto:hello@sooda.app">Contact us</a>
+        <a href="/help.html">Help</a>
+        <a href="/contact.html">Contact us</a>
       </nav>
     </div>
   </header>
@@ -368,7 +431,7 @@
 
           <div class="section">
             <h2>11. Contact</h2>
-            <p>If you have questions about these Terms of Use, contact us at <a href="mailto:hello@sooda.app" style="color:var(--brand); font-weight:600;">hello@sooda.app</a>.</p>
+            <p>If you have questions about these Terms of Use, contact us at <a href="mailto:hello@sooda.app" style="color:var(--brand); font-weight:var(--weight-semibold);">hello@sooda.app</a>.</p>
           </div>
         </div>
       </div>
@@ -381,20 +444,28 @@
         <div class="endcap-col endcap-brand">
           <img src="/logo-white.svg" alt="Sooda" />
           <p>Inventory, sales, storefront, and operations tools designed to help modern small businesses move faster with less friction.</p>
+          <div class="footer-stores" aria-label="Download Sooda">
+            <a href="#download" class="store-badge" aria-label="Download on the App Store">
+              <img src="/app-store.svg" alt="Download on the App Store" />
+            </a>
+            <a href="#download" class="store-badge" aria-label="Get it on Google Play">
+              <img src="/google-play.svg" alt="Get it on Google Play" />
+            </a>
+          </div>
         </div>
         <div class="endcap-col">
           <div class="endcap-title">Product</div>
           <div class="endcap-links">
             <a href="/#features">Features</a>
             <a href="/#benefits">Who it's for</a>
-            <a href="/#faq">Help center</a>
+            <a href="/help.html">Help center</a>
             <a href="/#download">Get the app</a>
           </div>
         </div>
         <div class="endcap-col">
           <div class="endcap-title">Company</div>
           <div class="endcap-links">
-            <a href="mailto:hello@sooda.app">Contact us</a>
+            <a href="/contact.html">Contact us</a>
             <a href="/terms.html">Terms of Use</a>
             <a href="/privacy.html">Privacy Policy</a>
           </div>
@@ -413,9 +484,9 @@
           <span>© 2025 Sooda. All rights reserved.</span>
         </div>
         <div class="endcap-socials">
-          <a href="#" aria-label="Instagram"><svg class="ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-instagram"></use></svg></a>
-          <a href="#" aria-label="Twitter"><svg class="ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-twitter"></use></svg></a>
-          <a href="#" aria-label="LinkedIn"><svg class="ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#ix-linkedin"></use></svg></a>
+          <a href="#" aria-label="Instagram"><svg class="ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/heroicons.svg#hero-camera"></use></svg></a>
+          <a href="#" aria-label="Twitter"><svg class="ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/heroicons.svg#hero-chat-bubbles"></use></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg class="ix" viewBox="0 0 24 24" aria-hidden="true"><use href="/heroicons.svg#hero-briefcase"></use></svg></a>
         </div>
       </div>
     </div>
