@@ -75,7 +75,7 @@
 	  }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  html, body { margin: 0; padding: 0; }
+  html, body { margin: 0; padding: 0; overflow-x: hidden; }
 	  body {
 	    font-family: var(--font-sans);
 	    font-size: var(--text-base);
@@ -90,7 +90,8 @@
   button { cursor: pointer; border: none; }
 	  h1, h2, h3, h4 { margin: 0; letter-spacing: var(--track-tight); line-height: var(--lh-tight); font-weight: var(--weight-bold); }
   p { margin: 0; }
-  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .wrap { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  main, section, .wrap { min-width: 0; }
 
   .nav {
     position: sticky;
@@ -484,6 +485,8 @@
 
   @media (max-width: 900px) {
     .nav-links { display: none; }
+    .help-hero { padding: 56px 0 34px; }
+    .help-body { padding: 54px 0 76px; }
     .help-shell,
     .help-detail-grid {
       grid-template-columns: 1fr;
@@ -518,6 +521,69 @@
     .endcap-wordmark {
       bottom: 10px;
       width: min(540px, 84vw);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .wrap { padding: 0 18px; }
+    .nav-inner { height: 72px; }
+    .logo img { width: 126px; }
+    .help-hero h1 {
+      font-size: clamp(34px, 10vw, 42px);
+    }
+    .help-hero p {
+      font-size: var(--text-md);
+    }
+    .help-search {
+      height: auto;
+      min-height: 50px;
+      gap: 10px;
+      padding: 8px 10px 8px 14px;
+      border-radius: 16px;
+    }
+    .help-search-clear {
+      padding: 0 10px;
+      flex-shrink: 0;
+    }
+    .help-body { padding: 44px 0 68px; }
+    .help-menu,
+    .help-panel,
+    .help-empty {
+      border-radius: 16px;
+    }
+    .help-menu { padding: 14px; }
+    .help-panel { padding: 18px; }
+    .help-detail { min-height: 0; }
+    .help-status {
+      white-space: normal;
+    }
+    .endcap { padding-bottom: 136px; }
+    .endcap-col {
+      padding: 24px 18px;
+    }
+    .endcap-brand > img {
+      width: 126px;
+    }
+    .endcap-brand p {
+      max-width: none;
+    }
+    .endcap-brand .footer-stores {
+      gap: 8px;
+    }
+    .endcap-brand .store-badge img {
+      height: 40px;
+    }
+    .endcap-links a,
+    .endcap-support a,
+    .endcap-support span {
+      font-size: var(--text-md);
+      overflow-wrap: anywhere;
+    }
+    .endcap-bottom {
+      padding: 24px 18px 0;
+    }
+    .endcap-wordmark {
+      width: min(420px, calc(100vw - 36px));
     }
   }
 </style>

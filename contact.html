@@ -45,7 +45,7 @@
     --gradient-banner: radial-gradient(820px 420px at 100% 0%, rgba(255,255,255,0.18), transparent 62%), radial-gradient(620px 360px at 0% 100%, rgba(110,148,255,0.32), transparent 64%), linear-gradient(135deg, var(--brand-base) 0%, #174BFA 54%, var(--brand-2) 100%);
   }
   * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; }
+  html, body { margin: 0; padding: 0; overflow-x: hidden; }
   body {
     font-family: var(--font-sans);
     font-size: var(--text-base);
@@ -60,7 +60,8 @@
   button { cursor: pointer; border: none; }
   h1, h2, h3 { margin: 0; line-height: var(--lh-tight); letter-spacing: var(--track-tight); }
   p { margin: 0; }
-  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .wrap { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  main, section, .wrap { min-width: 0; }
 
   .nav {
     position: sticky;
@@ -304,6 +305,7 @@
   @media (max-width: 900px) {
     .nav-links { display: none; }
     .contact-hero { padding: 58px 0 34px; }
+    .contact-body { padding: 54px 0 76px; }
     .contact-card { padding: 22px; }
     .endcap {
       min-height: 0;
@@ -323,6 +325,55 @@
     .endcap-wordmark {
       bottom: 10px;
       width: min(540px, 84vw);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .wrap { padding: 0 18px; }
+    .nav-inner { height: 72px; }
+    .logo img { width: 126px; }
+    .contact-hero { padding: 48px 0 30px; }
+    .contact-hero h1 {
+      font-size: clamp(34px, 10vw, 42px);
+    }
+    .contact-hero p {
+      font-size: var(--text-md);
+    }
+    .contact-body { padding: 42px 0 68px; }
+    .contact-card {
+      padding: 18px;
+      border-radius: 18px;
+    }
+    .contact-form button {
+      width: 100%;
+    }
+    .endcap { padding-bottom: 136px; }
+    .endcap-col {
+      padding: 24px 18px;
+    }
+    .endcap-brand > img {
+      width: 126px;
+    }
+    .endcap-brand p {
+      max-width: none;
+    }
+    .endcap-brand .footer-stores {
+      gap: 8px;
+    }
+    .endcap-brand .store-badge img {
+      height: 40px;
+    }
+    .endcap-links a,
+    .endcap-support a,
+    .endcap-support span {
+      font-size: var(--text-md);
+      overflow-wrap: anywhere;
+    }
+    .endcap-bottom {
+      padding: 24px 18px 0;
+    }
+    .endcap-wordmark {
+      width: min(420px, calc(100vw - 36px));
     }
   }
 </style>
