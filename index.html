@@ -1551,6 +1551,92 @@
 	  .testi-person h4 { font-size: var(--text-base); color: var(--ink); }
 	  .testi-person small { color: var(--ink-mute); font-size: var(--text-xs); font-weight: var(--weight-medium); }
 
+  .articles-section {
+    background: var(--surface-section-soft);
+  }
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+  .article-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    background: var(--surface-card);
+    box-shadow: var(--shadow-sm);
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .article-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(47,107,255,0.24);
+    box-shadow: var(--shadow-md);
+  }
+  .article-card__media {
+    aspect-ratio: 16 / 9;
+    background: var(--gradient-placeholder);
+    overflow: hidden;
+  }
+  .article-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .article-card__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 12px;
+    padding: 18px;
+  }
+  .article-card__date {
+    color: var(--ink-faint);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-bold);
+    text-transform: uppercase;
+  }
+  .article-card h3 {
+    font-size: 21px;
+  }
+  .article-card p {
+    color: var(--ink-mute);
+    font-size: var(--text-sm);
+  }
+  .article-card__link {
+    margin-top: auto;
+    color: var(--brand);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+  }
+  .articles-empty {
+    border: 1px dashed var(--line-2);
+    border-radius: var(--radius-md);
+    background: var(--surface-card);
+    color: var(--ink-mute);
+    padding: 24px;
+    text-align: center;
+  }
+  .articles-actions {
+    margin-top: 22px;
+    text-align: center;
+  }
+  .articles-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    border-radius: 999px;
+    background: var(--brand);
+    color: #fff;
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    padding: 0 18px;
+    box-shadow: 0 12px 24px -16px rgba(47,107,255,0.7);
+  }
+
   /* Pricing */
   .pricing-section {
     background: #fff;
@@ -2078,6 +2164,7 @@
     .features-grid { grid-auto-rows: auto; }
     .pricing-grid { grid-template-columns: 1fr; }
     .testi-row { grid-template-columns: 1fr; }
+    .articles-grid { grid-template-columns: 1fr; }
     .pricing-card {
       min-height: 0;
       padding: 24px 22px;
@@ -2404,6 +2491,7 @@
     <a href="/" class="logo" aria-label="Sooda home"><img src="/logo-white.svg" alt="Sooda" /></a>
     <nav class="nav-links">
       <a href="/help.html">Help</a>
+      <a href="/articles.html">Articles</a>
       <a href="/contact.html">Contact us</a>
     </nav>
   </div>
@@ -2771,6 +2859,21 @@
   </div>
 </section>
 
+<!-- ARTICLES -->
+<section class="articles-section" id="articles">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Latest articles</h2>
+      <p>Fresh guides and updates from the Sooda articles dashboard.</p>
+    </div>
+    <div class="articles-grid" data-articles-list data-articles-limit="3"></div>
+    <p class="articles-empty" data-articles-empty hidden>No Sooda articles are published yet.</p>
+    <div class="articles-actions">
+      <a class="articles-action" href="/articles.html">View all articles</a>
+    </div>
+  </div>
+</section>
+
 <section id="download" class="endcap" aria-label="Extended footer">
   <div class="wrap">
     <div class="endcap-grid">
@@ -2792,6 +2895,7 @@
           <a href="/#features">Features</a>
           <a href="/#benefits">Who it's for</a>
           <a href="/help.html">Help center</a>
+          <a href="/articles.html">Articles</a>
           <a href="#download">Get the app</a>
         </div>
       </div>
@@ -2829,6 +2933,7 @@
   </div>
 </section>
 
+<script src="/articles.js" defer></script>
 <script>
   // Looping typing animation for the custom domain preview
   (() => {

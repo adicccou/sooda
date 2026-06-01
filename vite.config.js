@@ -10,6 +10,8 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         help: resolve(__dirname, 'help.html'),
+        articles: resolve(__dirname, 'articles.html'),
+        article: resolve(__dirname, 'article.html'),
         contact: resolve(__dirname, 'contact.html'),
         terms: resolve(__dirname, 'terms.html'),
         privacy: resolve(__dirname, 'privacy.html'),
