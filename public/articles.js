@@ -1,7 +1,7 @@
 (function () {
   const API_BASE = "https://articles-dashboard.adilet-melisov.workers.dev";
   const SITE_SLUG = "sooda";
-  const PLACEHOLDER_IMAGE = "/hero-phone.webp";
+  const PLACEHOLDER_IMAGE = "/sooda-link-banner.png";
 
   const escapeHtml = (value) => String(value ?? "")
     .replaceAll("&", "&amp;")
