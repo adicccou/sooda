@@ -1606,10 +1606,22 @@
   }
   .article-card h3 {
     font-size: 21px;
+    line-height: 1.16;
+    display: -webkit-box;
+    min-height: calc(1.16em * 2);
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
   }
   .article-card p {
     color: var(--ink-mute);
     font-size: var(--text-sm);
+    line-height: 1.55;
+    display: -webkit-box;
+    min-height: calc(1.55em * 2);
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
   }
   .article-card__link {
     margin-top: auto;
