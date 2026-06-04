@@ -13,14 +13,36 @@ function buildAssetRecoveryScript() {
 (() => {
   const retryFlag = 'data-public-fallback-applied';
   const boundFlag = 'data-public-fallback-bound';
+  const refreshFlag = 'data-root-refresh-applied';
+  const refreshParam = 'asset-refresh';
   const toPublicPath = (value) => {
     if (!value || !value.startsWith('/') || value.startsWith('/public/')) return value;
     return '/public' + value;
   };
 
+  const withRefreshParam = (value) => {
+    if (!value) return value;
+
+    const url = new URL(value, window.location.origin);
+    url.searchParams.set(refreshParam, String(Date.now()));
+    return url.pathname + url.search + url.hash;
+  };
+
+  const retryOriginalWithRefresh = (img) => {
+    const source = img.getAttribute('src');
+    const original = img.dataset.originalSrc || source;
+    if (!original || img.getAttribute(refreshFlag) === '1') return false;
+
+    img.dataset.originalSrc = original;
+    img.setAttribute(refreshFlag, '1');
+    img.src = withRefreshParam(original);
+    return true;
+  };
+
   const retryImageFromPublic = (img) => {
     const source = img.getAttribute('src');
-    const fallback = toPublicPath(source);
+    const original = img.dataset.originalSrc || img.getAttribute('src');
+    const fallback = toPublicPath(original);
     if (!fallback || fallback === source || img.getAttribute(retryFlag) === '1') return;
     img.setAttribute(retryFlag, '1');
     img.src = fallback;
@@ -29,14 +51,23 @@ function buildAssetRecoveryScript() {
   const bindImageFallback = (img) => {
     if (img.getAttribute(boundFlag) === '1') return;
     img.setAttribute(boundFlag, '1');
+    if (!img.dataset.originalSrc) {
+      img.dataset.originalSrc = img.getAttribute('src') || '';
+    }
 
     const check = () => {
       if (img.complete && img.naturalWidth === 0) {
-        retryImageFromPublic(img);
+        if (!retryOriginalWithRefresh(img)) {
+          retryImageFromPublic(img);
+        }
       }
     };
 
-    img.addEventListener('error', () => retryImageFromPublic(img), { once: true });
+    img.addEventListener('error', () => {
+      if (!retryOriginalWithRefresh(img)) {
+        retryImageFromPublic(img);
+      }
+    });
     requestAnimationFrame(check);
     window.addEventListener('load', check, { once: true });
   };
